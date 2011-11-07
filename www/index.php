@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-        // put your code here
-        ?>
-    </body>
-</html>
+<?php
+
+error_reporting(E_ALL | E_STRICT);
+
+require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'shell' . DIRECTORY_SEPARATOR . 'Bootstrap.php');
+
+Dispatcher::execute(Request::create());
