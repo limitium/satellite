@@ -1,5 +1,6 @@
-Jahsonic
-Where do you go for information about a movie you can’t quite remember? Or maybe it’s a quirky music act from the 60s, an avant-garde art movement that never quite caught on? In other words, where do you go when the encyclopedia doesn’t help and Wikipedia’s oblivious?
+<?php 
+return array('title'=>"Jahsonic",
+"body"=>"Where do you go for information about a movie you can’t quite remember? Or maybe it’s a quirky music act from the 60s, an avant-garde art movement that never quite caught on? In other words, where do you go when the encyclopedia doesn’t help and Wikipedia’s oblivious?
 
  
 
@@ -7,4 +8,4 @@ If you’re like the Best Blog team, you surf over to Jahsonic: A Vocabulary of 
 
  
 
-With any luck, you’ll get lost hopping from link to link, following your instincts and enjoying one wild ride. Always entertaining and thought-provoking.
+With any luck, you’ll get lost hopping from link to link, following your instincts and enjoying one wild ride. Always entertaining and thought-provoking.");

@@ -1,8 +1,9 @@
-Things That You Gotta Note!
-Where can I get a free email marketing app? What is a good place for sending animated notes? Where can I get a free GB of online storage? Where did I put that other sock?
+<?php 
+return array('title'=>"Things That You Gotta Note!",
+"body"=>"Where can I get a free email marketing app? What is a good place for sending animated notes? Where can I get a free GB of online storage? Where did I put that other sock?
 
 Though it might not help you find your missing sock, for the other questions you need not look any further than Things That You Gotta Note.
 
 Over at Things That You Gotta Note blogger Cris has put his experience as a web researcher to use and compiled and reviewed, for our benefit, the best of his web finds and useful applications. I know, personally, I was happy to find a free, screen recorder program on the site.
 
-So head on over to Things That You Gotta Note. You just might find just what you were needing.
+So head on over to Things That You Gotta Note. You just might find just what you were needing.");

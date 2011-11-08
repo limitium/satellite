@@ -1,5 +1,6 @@
-Mennogirl
-Well, after a long hiatus I finally bring you another offering from the fine editors at bestblog.
+<?php 
+return array('title'=>"Mennogirl",
+"body"=>"Well, after a long hiatus I finally bring you another offering from the fine editors at bestblog.
 
 Have you ever wondered what went on inside the mind of a young woman? Well, Abby over at the Mennogirl blog has decided to give us a glimpse into just that.
 
@@ -9,4 +10,4 @@ Abby is a current Chicago resident who has dedicated her blog to the purpose of 
 
 Indeed, the writings of mennogirl are rather random but still quite engaging and personable. So for a bit of dorky randomness (in a good way) check out Mennogirl.
 
-- Tylor
+- Tylor");

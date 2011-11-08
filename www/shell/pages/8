@@ -1,6 +1,7 @@
-хуй пизда!
-<table class="desc">
-                	<tbody><tr class="odd"><td class="propName">Артикул</td><td>14960117  </td></tr>
+<?php 
+return array('title'=>"хуй пизда!",
+"body"=>"<table class='desc'>
+                	<tbody><tr class='odd'><td class='propName'>Артикул</td><td>14960117  </td></tr>
 					                    <tr><td>
                     Описание товара<!-- opisanie-->
                     </td>
@@ -21,7 +22,7 @@
  Резиновая подметка Omni-Grip&reg; двойной плотности с разнонаправленным протектором для лучшего сцепления на зимних дорогах.
 &nbsp;</p>
                                         </td></tr>
-                                    <tr class="odd"><td>
+                                    <tr class='odd'><td>
                     Категория <!-- category-->
                     </td>
                     <td>
@@ -31,7 +32,7 @@
                     </td>
                     <td>
                     кожа, нейлон                                          </td></tr>
-                                    <tr class="odd"><td>
+                                    <tr class='odd'><td>
                     Материал подошвы<!-- material_sole-->
                     </td>
                     <td>
@@ -41,7 +42,7 @@
                     </td>
                     <td>
                     Текстиль                                        </td></tr>
-                                    <tr class="odd"><td>
+                                    <tr class='odd'><td>
                     Способ застегивания<!-- zip_up-->
                     </td>
                     <td>
@@ -51,7 +52,7 @@
                     </td>
                     <td>
                     черный, красный                                          </td></tr>
-                                    <tr class="odd"><td>
+                                    <tr class='odd'><td>
                     Пол <!-- pol-->
                     </td>
                     <td>
@@ -62,4 +63,4 @@
                     <td>
                     Ботинки                                        </td></tr>
                                 
-                                </tbody></table>
+                                </tbody></table>");

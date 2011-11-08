@@ -21,9 +21,13 @@ class View {
     }
 
     public function render() {
+        $viewPath = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'tpl' . DIRECTORY_SEPARATOR . $this->tpl . '.php';
+        if (!file_exists($viewPath)) {
+            throw new Exception('View not found');
+        }
         ob_start();
         extract($this->data);
-        include dirname(__FILE__) . DIRECTORY_SEPARATOR . 'tpl' . DIRECTORY_SEPARATOR . $this->tpl . '.html';
+        include $viewPath;
         return ob_get_clean();
     }
 

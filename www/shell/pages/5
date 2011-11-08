@@ -1,6 +1,7 @@
-Tiger Feet
-Given that Tiger Feet really hates spiders, maybe it’s not so nice to begin this post about her blog with a picture of one.
+<?php 
+return array('title'=>"Tiger Feet",
+"body"=>"Given that Tiger Feet really hates spiders, maybe it’s not so nice to begin this post about her blog with a picture of one.
 
 Still, she’s also quite funny and this particular spider, which resides on her wonderful personal blog, isn’t really all that scary.
 
-If someone can make you laugh about the rotten weather in Manchester, and get you to cheer her on as she loses weight, then she’s created a very fine personal blog.
+If someone can make you laugh about the rotten weather in Manchester, and get you to cheer her on as she loses weight, then she’s created a very fine personal blog.");
