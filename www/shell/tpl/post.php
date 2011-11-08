@@ -6,27 +6,24 @@
 
     <hr />
 
-    <div class="post-318 post type-post status-publish format-standard hentry category-art category-arts category-christianity category-faith category-ideas category-life category-photo category-religion category-spirituality category-women" id="post-318">
+    <div class="post-<?php echo $post->getId(); ?> post type-post status-publish format-standard hentry" id="post-<?php echo $post->getId(); ?>">
         <div class="entry-head">
-            <h3 class="entry-title"><a title="Permanent link to Elle&nbsp;Effect" rel="bookmark" href="http://bestblog.wordpress.com/2007/06/13/elle-effect/">Elle&nbsp;Effect</a></h3>
+            <h3 class="entry-title"><a title="Постоянная ссылка на <?php echo $post->title; ?>" rel="bookmark" href="http://bestblog.wordpress.com/2007/06/13/elle-effect/"><?php echo $post->title; ?></a></h3>
 
             <small class="entry-meta">
                 <span class="chronodata">
-                    Published <abbr title="2007-06-13T11:05:14+0000" class="published">13 June, 2007</abbr></span>
+                    Опубликовано <abbr title="<?php echo $post->getPublished("Y-m-d\TH:m:i+0000"); ?>" class="published"><?php echo $post->getPublished("d.m.Y"); ?></abbr></span>
 
-                <span class="entry-category"> <a rel="category tag" title="View all posts in art" href="http://bestblog.wordpress.com/category/art/">art</a> , <a rel="category tag" title="View all posts in arts" href="http://bestblog.wordpress.com/category/arts/">arts</a> , <a rel="category tag" title="View all posts in Christianity" href="http://bestblog.wordpress.com/category/christianity/">Christianity</a> , <a rel="category tag" title="View all posts in faith" href="http://bestblog.wordpress.com/category/faith/">faith</a> , <a rel="category tag" title="View all posts in ideas" href="http://bestblog.wordpress.com/category/ideas/">ideas</a> , <a rel="category tag" title="View all posts in life" href="http://bestblog.wordpress.com/category/life/">life</a> , <a rel="category tag" title="View all posts in photo" href="http://bestblog.wordpress.com/category/photo/">photo</a> , <a rel="category tag" title="View all posts in Religion" href="http://bestblog.wordpress.com/category/religion/">Religion</a> , <a rel="category tag" title="View all posts in Spirituality" href="http://bestblog.wordpress.com/category/spirituality/">Spirituality</a> , <a rel="category tag" title="View all posts in Women" href="http://bestblog.wordpress.com/category/women/">Women</a></span>
-
-                <a title="Comment on Elle&nbsp;Effect" class="commentslink" href="http://bestblog.wordpress.com/2007/06/13/elle-effect/#comments">2&nbsp;<span>Comments</span></a>				
+                <a title="Комментариев к <?php echo $post->title; ?>" class="commentslink" href="/post/<?php echo $post->getId(); ?>/#comments"><?php echo $post->getCommentsCount(); ?>&nbsp;<span>Комментариев</span></a>				
 
                 <br />				
             </small> <!-- .entry-meta -->
         </div> <!-- .entry-head -->
 
         <div class="entry-content">
-            <p>I have been sitting on reporting this best blog for a little while now (work, school, and such has kept me distracted) but now it is time to let it out of the box.</p>
-            <p>About a week and a half ago I was browsing around the tag surfer when I (happily) stumbled across <a href="http://laurenstonestreet.com/">Elle Effect</a>.  Lauren, the author, is an eighteen year old artist who not only gives us a glimpse into her artistic works but also into the thoughts and situations of her daily life.</p>
-            <p>What I quickly discoved is that this young girl possesses a mind able to delve into the deeper end of life through both the visual arts as well as the written word.</p>
-            <p>All this is why I consider <a href="http://laurenstonestreet.com/">Elle Effect</a> a best blog.</p>
+            <p>
+                <?php echo $post->body; ?>
+            </p>
             <div id="ilikeposts"></div><div class="sharedaddy sd-like-enabled"><div class="sd-block sd-like" id="wpl-likebox"><h3 class="sd-title">Like this:</h3><div class="sd-content"><div id="wpl-button"><a rel="nofollow" class="like sd-button" title="I like this post" href="http://bestblog.wordpress.com/2007/06/13/elle-effect/?like=1&amp;_wpnonce=dfef94bf8e"><span>Like</span></a></div><div class="sd-like-count" id="wpl-count"><span>22</span> bloggers like this post.</div><ul class="sd-like-gravatars" id="wpl-avatars"><li><a class="wpl-liker" href="http://gravatar.com/selenabeany"><img width="30" height="30" alt="Selena Beany" class="avatar avatar-30 grav-hashed" src="http://1.gravatar.com/avatar/159b15c4a610f25f6d5fa6cb33bea1b4?s=30&amp;d=identicon&amp;r=G" id="grav-159b15c4a610f25f6d5fa6cb33bea1b4-0"></a></li><li><a class="wpl-liker" href="http://gravatar.com/hellothereitsbillie"><img width="30" height="30" alt="Billie Blanco" class="avatar avatar-30 grav-hashed" src="http://0.gravatar.com/avatar/8ed85af0ab1fa6027417afd72dd4f887?s=30&amp;d=identicon&amp;r=G" id="grav-8ed85af0ab1fa6027417afd72dd4f887-0"></a></li><li><a class="wpl-liker" href="http://gravatar.com/politricky"><img width="30" height="30" alt="ardinusw" class="avatar avatar-30 grav-hashed" src="http://1.gravatar.com/avatar/78d8d510790f70a585b5b3d17c39ed13?s=30&amp;d=identicon&amp;r=G" id="grav-78d8d510790f70a585b5b3d17c39ed13-0"></a></li><li><a class="wpl-liker" href="http://gravatar.com/erectionclips"><img width="30" height="30" alt="Erection pills" class="avatar avatar-30 grav-hashed" src="http://0.gravatar.com/avatar/0a3e0633b12a375d1077429300b1674c?s=30&amp;d=identicon&amp;r=G" id="grav-0a3e0633b12a375d1077429300b1674c-0"></a></li><li><a class="wpl-liker" href="http://gravatar.com/trammiele"><img width="30" height="30" alt="trammiele" class="avatar avatar-30 grav-hashed" src="http://0.gravatar.com/avatar/c6288423ebf50f2841be3236945f6abd?s=30&amp;d=identicon&amp;r=G" id="grav-c6288423ebf50f2841be3236945f6abd-0"></a></li><li><a class="wpl-liker" href="http://gravatar.com/ralovestapel"><img width="30" height="30" alt="Rox Tapel" class="avatar avatar-30 grav-hashed" src="http://0.gravatar.com/avatar/cb44f595852f388388b5eca65774b680?s=30&amp;d=identicon&amp;r=G" id="grav-cb44f595852f388388b5eca65774b680-0"></a></li><li><a class="wpl-liker" href="http://gravatar.com/frivbest"><img width="30" height="30" alt="frivbest" class="avatar avatar-30 grav-hashed" src="http://0.gravatar.com/avatar/6be49522a1d2ea56153c32778f3aaae4?s=30&amp;d=identicon&amp;r=G" id="grav-6be49522a1d2ea56153c32778f3aaae4-0"></a></li><li><a class="wpl-liker" href="http://gravatar.com/gaddison"><img width="30" height="30" alt="gaddison" class="avatar avatar-30 grav-hashed" src="http://1.gravatar.com/avatar/53c553d407f4fe0b4a7bb2be0d795b00?s=30&amp;d=identicon&amp;r=G" id="grav-53c553d407f4fe0b4a7bb2be0d795b00-0"></a></li><li><a class="wpl-liker" href="http://gravatar.com/articles2articles"><img width="30" height="30" alt="articles2articles" class="avatar avatar-30 grav-hashed" src="http://0.gravatar.com/avatar/4c9e533000e1f7ad9272c9bf3a4b2207?s=30&amp;d=identicon&amp;r=G" id="grav-4c9e533000e1f7ad9272c9bf3a4b2207-0"></a></li><li><a class="wpl-liker" href="http://gravatar.com/abdulsamipk"><img width="30" height="30" alt="healthtips" class="avatar avatar-30 grav-hashed" src="http://0.gravatar.com/avatar/49bea4ca3de03e273d99b72d77eb03a6?s=30&amp;d=identicon&amp;r=G" id="grav-49bea4ca3de03e273d99b72d77eb03a6-0"></a></li><li><a class="wpl-liker" href="http://gravatar.com/graeme82"><img width="30" height="30" alt="graeme82" class="avatar avatar-30 grav-hashed" src="http://1.gravatar.com/avatar/1de6386b6d48e43f907c990bf407bfb3?s=30&amp;d=identicon&amp;r=G" id="grav-1de6386b6d48e43f907c990bf407bfb3-0"></a></li><li><a class="wpl-liker" href="http://gravatar.com/bprincipe"><img width="30" height="30" alt="Barrett" class="avatar avatar-30 grav-hashed" src="http://0.gravatar.com/avatar/aab3ddbb95746d4cc75afcd7cbf9189a?s=30&amp;d=identicon&amp;r=G" id="grav-aab3ddbb95746d4cc75afcd7cbf9189a-0"></a></li><li><a class="wpl-liker" href="http://gravatar.com/rewardsfree4ever"><img width="30" height="30" alt="TheOne1" class="avatar avatar-30 grav-hashed" src="http://1.gravatar.com/avatar/19fc9d1d872ba8a13e04c795c1fb34f5?s=30&amp;d=identicon&amp;r=G" id="grav-19fc9d1d872ba8a13e04c795c1fb34f5-0"></a></li><li><a class="wpl-liker" href="http://gravatar.com/fungamesarena"><img width="30" height="30" alt="fungamesarena" class="avatar avatar-30 grav-hashed" src="http://0.gravatar.com/avatar/4e3261495c9da50e1bc5ba32fc5dba44?s=30&amp;d=identicon&amp;r=G" id="grav-4e3261495c9da50e1bc5ba32fc5dba44-0"></a></li><li><a class="wpl-liker" href="http://gravatar.com/sathyanallavan"><img width="30" height="30" alt="sathyanallavan" class="avatar avatar-30 grav-hashed" src="http://0.gravatar.com/avatar/cce9cb09ba227916b2225618309f3078?s=30&amp;d=identicon&amp;r=G" id="grav-cce9cb09ba227916b2225618309f3078-0"></a></li><li><a class="wpl-liker" href="http://gravatar.com/beryos"><img width="30" height="30" alt="beryos" class="avatar avatar-30 grav-hashed" src="http://1.gravatar.com/avatar/9fc12f544dafa0d915cdd436d6d39771?s=30&amp;d=identicon&amp;r=G" id="grav-9fc12f544dafa0d915cdd436d6d39771-0"></a></li><li><a class="wpl-liker" href="http://gravatar.com/kbejjit"><img width="30" height="30" alt="kbejjit" class="avatar avatar-30 grav-hashed" src="http://0.gravatar.com/avatar/8eb984bc5cc5152530f83e8932464a6f?s=30&amp;d=identicon&amp;r=G" id="grav-8eb984bc5cc5152530f83e8932464a6f-0"></a></li><li><a class="wpl-liker" href="http://gravatar.com/booknookandcoffees"><img width="30" height="30" alt="booknookandcoffees" class="avatar avatar-30 grav-hashed" src="http://0.gravatar.com/avatar/673ba108eb1e4c74760d49e8fb89fcba?s=30&amp;d=identicon&amp;r=G" id="grav-673ba108eb1e4c74760d49e8fb89fcba-0"></a></li><li><a class="wpl-liker" href="http://gravatar.com/penisvideo"><img width="30" height="30" alt="Penis videos" class="avatar avatar-30 grav-hashed" src="http://1.gravatar.com/avatar/7c2e4544056474d9bf55d39f560cd217?s=30&amp;d=identicon&amp;r=G" id="grav-7c2e4544056474d9bf55d39f560cd217-0"></a></li><li><a class="wpl-liker" href="http://gravatar.com/assignmentsready"><img width="30" height="30" alt="Horent" class="avatar avatar-30 grav-hashed" src="http://1.gravatar.com/avatar/9415c2695fd0f975c1f36ad310304baa?s=30&amp;d=identicon&amp;r=G" id="grav-9415c2695fd0f975c1f36ad310304baa-0"></a></li><li><a class="wpl-liker" href="http://gravatar.com/geeknidiots"><img width="30" height="30" alt="geeknidiots" class="avatar avatar-30 grav-hashed" src="http://0.gravatar.com/avatar/a060a17aec39ec4e16756a2cd3043a11?s=30&amp;d=identicon&amp;r=G" id="grav-a060a17aec39ec4e16756a2cd3043a11-0"></a></li><li><a class="wpl-liker" href="http://gravatar.com/janakabis"><img width="30" height="30" alt="Janaka Samarasekara" class="avatar avatar-30 grav-hashed" src="http://0.gravatar.com/avatar/6f6d42d44542e6eb88978b1ba29d0812?s=30&amp;d=identicon&amp;r=G" id="grav-6f6d42d44542e6eb88978b1ba29d0812-0"></a></li></ul></div></div></div>
         </div> <!-- .entry-content -->
         <div class="clear"></div>
@@ -34,7 +31,7 @@
 
     <div class="comments">
 
-        <h4><span id="comments">2</span> Responses to “Elle&nbsp;Effect”</h4>
+        <h4><span id="comments"><?php echo $post->getCommentsCount(); ?></span> Ответов к “<?php echo $post->title; ?>”</h4>
 
         <div class="metalinks">
             <span class="commentsrsslink"><a href="http://bestblog.wordpress.com/2007/06/13/elle-effect/feed/">Feed for this Entry</a></span>
@@ -57,7 +54,7 @@
                     </div>
 
                     <div class="reply">
-                        <a onclick="return addComment.moveForm(&quot;div-comment-55596&quot;, &quot;55596&quot;, &quot;respond&quot;, &quot;318&quot;)" href="/2007/06/13/elle-effect/?replytocom=55596#respond" class="comment-reply-link">Reply</a>	</div>
+                        <a onclick="return addComment.moveForm(&quot;div-comment-55596&quot;, &quot;55596&quot;, &quot;respond&quot;, &quot;<?php echo $post->getId(); ?>&quot;)" href="/2007/06/13/elle-effect/?replytocom=55596#respond" class="comment-reply-link">Reply</a>	</div>
                 </div>
             </li>
             <li id="comment-55598" class="comment odd alt thread-odd thread-alt depth-1 highlander-comment">
@@ -76,7 +73,7 @@
 
 
                     <div class="reply">
-                        <a onclick="return addComment.moveForm(&quot;div-comment-55598&quot;, &quot;55598&quot;, &quot;respond&quot;, &quot;318&quot;)" href="/2007/06/13/elle-effect/?replytocom=55598#respond" class="comment-reply-link">Reply</a>	</div>
+                        <a onclick="return addComment.moveForm(&quot;div-comment-55598&quot;, &quot;55598&quot;, &quot;respond&quot;, &quot;<?php echo $post->getId(); ?>&quot;)" href="/2007/06/13/elle-effect/?replytocom=55598#respond" class="comment-reply-link">Reply</a>	</div>
                 </div>
             </li>
         </ol> <!-- END #commentlist -->
@@ -212,7 +209,7 @@
 
             <p class="form-submit">
                 <input type="submit" value="Post Comment" id="comment-submit" name="submit" />
-                <input type="hidden" id="comment_post_ID" value="318" name="comment_post_ID" />
+                <input type="hidden" id="comment_post_ID" value="<?php echo $post->getId(); ?>" name="comment_post_ID" />
                 <input type="hidden" value="0" id="comment_parent" name="comment_parent" />
             </p>
 

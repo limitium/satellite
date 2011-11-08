@@ -23,7 +23,7 @@ class View {
     public function render() {
         $viewFile = getPath('tpl/') . $this->tpl . '.php';
         if (!file_exists($viewFile)) {
-            throw new Exception('View not found');
+            throw new Exception('View ' . $viewFile . ' not found');
         }
         ob_start();
         extract($this->data);

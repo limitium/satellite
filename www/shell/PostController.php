@@ -23,4 +23,12 @@ class PostController {
         $this->posts = $posts;
     }
 
+    public function getPost(Request $request) {
+        $postId = $request->get('id');
+        if (!file_exists(getPath('pages/') . $postId)) {
+            throw new Exception('post not found');
+        }
+        $this->post = Post::load($postId);
+    }
+
 }

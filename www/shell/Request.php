@@ -3,6 +3,8 @@
 class Request {
 
     public $method;
+    public $controller;
+    public $action;
     public $args = array();
 
     /**
@@ -25,6 +27,28 @@ class Request {
                 $this->args[] = $p;
             }
         }
+
+        $asoc = array();
+
+        switch (sizeof($this->args)) {
+            case 2:
+                if ($this->args[0] == 'page') {
+                    $asoc['page'] = $this->args[1];
+                    $this->controller = 'post';
+                    $this->action = 'list';
+                }
+                if ($this->args[0] == 'post') {
+                    $asoc['id'] = $this->args[1];
+                    $this->controller = 'post';
+                    $this->action = 'post';
+                }
+                break;
+            default:
+                $this->controller = 'post';
+                $this->action = 'list';
+                break;
+        }
+        $this->args = $asoc;
     }
 
     public function isPost() {
@@ -33,6 +57,17 @@ class Request {
 
     public function isGet() {
         return $this->method == 'GET';
+    }
+
+    public function has($k) {
+        return isset($this->args[$k]);
+    }
+
+    public function get($k) {
+        if (!isset($this->args[$k])) {
+            throw new Exception('arg not found');
+        }
+        return $this->args[$k];
     }
 
 }
