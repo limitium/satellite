@@ -15,8 +15,8 @@ class Post {
      * @throws Exception 
      */
     public static function load($fileId) {
-        $pageDir = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'pages' . DIRECTORY_SEPARATOR;
-        $commentsDir = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'comments' . DIRECTORY_SEPARATOR;
+        $pageDir = getPath('pages/');
+        $commentsDir = getPath('comments/');
         if (file_exists($pageDir . $fileId)) {
             $postData = include $pageDir . $fileId;
             $commentData = array();
@@ -40,8 +40,8 @@ class Post {
         return sizeof($this->comments);
     }
 
-    public function getPublished() {
-        return date("d.m.Y H:i:s", $this->published);
+    public function getPublished($format = "d.m.Y H:i") {
+        return date($format, $this->published);
     }
 
     public function getTruncateBody($length = 100, $truncate_string = '...', $truncate_lastspace = false) {
@@ -71,6 +71,10 @@ class Post {
         }
 
         return $text;
+    }
+
+    public function getId() {
+        return $this->fileId;
     }
 
 }

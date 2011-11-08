@@ -1,13 +1,13 @@
 <div id="primarycontent" class="hfeed">
     <?php foreach ($posts as $post): ?>
-        <div id="post-318" class="post-318 post type-post status-publish format-standard hentry category-art category-arts category-christianity category-faith category-ideas category-life category-photo category-religion category-spirituality category-women">
+        <div id="post-<?php echo $post->getId(); ?>" class="post-<?php echo $post->getId(); ?> post type-post status-publish format-standard hentry">
             <div class="entry-head">
-                <h3 class="entry-title"><a href="http://bestblog.wordpress.com/2007/06/13/elle-effect/" rel="bookmark" title="Permanent link to Elle&nbsp;Effect"><?php echo $post->title; ?></a></h3>
+                <h3 class="entry-title"><a href="/post/<?php echo $post->getId(); ?>" rel="bookmark" title="Permanent link to Elle&nbsp;Effect"><?php echo $post->title; ?></a></h3>
 
                 <small class="entry-meta">
                     <span class="chronodata">
-                        Published <abbr class="published" title="2007-06-13T11:05:14+0000">13 June, 2007</abbr>					</span>
-                    <a href="http://bestblog.wordpress.com/2007/06/13/elle-effect/#comments" class="commentslink" title="Comment on Elle&nbsp;Effect"><?php echo $post->getCommentsCount(); ?>&nbsp;<span>Comments</span></a>				
+                        Опубликовано <abbr class="published" title="<?php echo $post->getPublished("Y-m-d\TH:m:i+0000"); ?>"><?php echo $post->getPublished("d.m.Y"); ?></abbr></span>
+                    <a href="/post/<?php echo $post->getId(); ?>/#comments" class="commentslink" title="Comment on Elle&nbsp;Effect"><?php echo $post->getCommentsCount(); ?>&nbsp;<span>Комментариев</span></a>				
 
                     <br>				
                 </small> <!-- .entry-meta -->
@@ -23,4 +23,4 @@
         </div> <!-- #post-ID -->
     <?php endforeach; ?>
 </div><!-- #primarycontent .hfeed -->
-<p align="center"><a href="http://bestblog.wordpress.com/page/2/">Next Page »</a></p>
+<p align="center"><a href="/page/2/">Следующая страница »</a></p>

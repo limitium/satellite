@@ -21,13 +21,13 @@ class View {
     }
 
     public function render() {
-        $viewPath = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'tpl' . DIRECTORY_SEPARATOR . $this->tpl . '.php';
-        if (!file_exists($viewPath)) {
+        $viewFile = getPath('tpl/') . $this->tpl . '.php';
+        if (!file_exists($viewFile)) {
             throw new Exception('View not found');
         }
         ob_start();
         extract($this->data);
-        include $viewPath;
+        include $viewFile;
         return ob_get_clean();
     }
 
