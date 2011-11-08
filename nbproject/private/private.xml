@@ -2,7 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/C:/WebServers/home/satellite/www/shell/Post.php</file>
         <file>file:/C:/WebServers/home/satellite/www/shell/View.php</file>
         <file>file:/C:/WebServers/home/satellite/www/shell/Request.php</file>
         <file>file:/C:/WebServers/home/satellite/www/shell/Bootstrap.php</file>
@@ -21,5 +20,7 @@
         <file>file:/C:/WebServers/home/satellite/www/shell/Dispatcher.php</file>
         <file>file:/C:/WebServers/home/satellite/www/shell/tpl/layout.php</file>
         <file>file:/C:/WebServers/home/satellite/www/shell/pages/9</file>
+        <file>file:/C:/WebServers/home/satellite/www/shell/Post.php</file>
+        <file>file:/C:/WebServers/home/satellite/www/index.php</file>
     </open-files>
 </project-private>
