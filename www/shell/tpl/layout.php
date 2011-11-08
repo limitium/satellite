@@ -87,7 +87,7 @@
             <div class="content">
                 <div id="primary">
                     <div id="current-content">
-                    <?php echo $content; ?>
+                        <?php echo $content; ?>
                     </div> <!-- #current-content -->
 
                     <div id="dynamic-content"></div>
@@ -97,53 +97,26 @@
 
                 <div class="secondary">
 
-                    <div id="text-1" class="widget widget_text"><h2 class="widgettitle">About</h2>
+                    <div id="text-1" class="widget widget_text"><h2 class="widgettitle">О блоге</h2>
                         <div class="textwidget">Best Blog on Wordpress searches for and 
                             reviews the best blogs on wordpress.com  We also write articles to guide
                             new and old bloggers!</div>
-                    </div>	<div id="recent-comments" class="widget widget_recent_comments">		<h2 class="widgettitle">Recent Comments</h2>
-
                     </div>		
                     <div id="recent-posts-2" class="widget widget_recent_entries">		
-                        <h2 class="widgettitle">Recent Posts</h2>
+                        <h2 class="widgettitle">Последние публикации</h2>
                         <ul>
-                            <li><a href="http://bestblog.wordpress.com/2007/06/13/elle-effect/" title="Elle&nbsp;Effect">Elle&nbsp;Effect</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2007/04/26/a-slice-of-life/" title="A Slice of&nbsp;Life">A Slice of&nbsp;Life</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2007/04/05/tiny-cat-pants/" title="Tiny Cat&nbsp;Pants">Tiny Cat&nbsp;Pants</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2007/03/28/jahsonic/" title="Jahsonic">Jahsonic</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2007/03/22/tiger-feet/" title="Tiger&nbsp;Feet">Tiger&nbsp;Feet</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2007/02/11/mennogirl/" title="Mennogirl">Mennogirl</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2007/02/06/soon-and-very-soon/" title="Soon and very&nbsp;soon…">Soon and very&nbsp;soon…</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2007/01/19/things-that-you-gotta-note/" title="Things That You Gotta&nbsp;Note!">Things That You Gotta&nbsp;Note!</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2006/12/30/learning-from-best-bloggers/" title="Learning From Best&nbsp;Bloggers">Learning From Best&nbsp;Bloggers</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2006/12/28/stand-in-a-queue/" title="Stand in a&nbsp;Queue">Stand in a&nbsp;Queue</a></li>
+                            <?php foreach ($recentPosts as $post): ?>
+                                <li><a href="/post/<?php echo $post->getId(); ?>" title="<?php echo $post->title; ?>"><?php echo $post->title; ?></a></li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
                     <div id="archives-2" class="widget widget_archive">
-                        <h2 class="widgettitle">Archives</h2>
+                        <h2 class="widgettitle">Архив</h2>
                         <ul>
-                            <li><a href="http://bestblog.wordpress.com/2007/06/" title="June 2007">June 2007</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2007/04/" title="April 2007">April 2007</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2007/03/" title="March 2007">March 2007</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2007/02/" title="February 2007">February 2007</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2007/01/" title="January 2007">January 2007</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2006/12/" title="December 2006">December 2006</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2006/11/" title="November 2006">November 2006</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2006/10/" title="October 2006">October 2006</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2006/09/" title="September 2006">September 2006</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2006/08/" title="August 2006">August 2006</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2006/07/" title="July 2006">July 2006</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2006/06/" title="June 2006">June 2006</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2006/05/" title="May 2006">May 2006</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2006/04/" title="April 2006">April 2006</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2006/03/" title="March 2006">March 2006</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2006/02/" title="February 2006">February 2006</a></li>
-                            <li><a href="http://bestblog.wordpress.com/2006/01/" title="January 2006">January 2006</a></li>
+                            <?php foreach ($archive as $uri=>$text): ?>
+                            <li><a href="/archive/<?php echo $uri; ?>" title="<?php echo $text; ?>"><?php echo $text; ?></a></li>
+                            <?php endforeach; ?>
                         </ul>
-                    </div>
-                    <div id="categories-1" class="widget widget_categories">
-                        <h2 class="widgettitle">Title bla</h2>
-
                     </div>
                 </div>
                 <div class="clear"></div>

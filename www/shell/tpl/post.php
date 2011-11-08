@@ -12,7 +12,7 @@
 
             <small class="entry-meta">
                 <span class="chronodata">
-                    Опубликовано <abbr title="<?php echo $post->getPublished("Y-m-d\TH:m:i+0000"); ?>" class="published"><?php echo $post->getPublished("d.m.Y"); ?></abbr></span>
+                    Опубликовано <abbr title="<?php echo $post->getPublished("Y-m-d\TH:m:i+0000"); ?>" class="published"><?php echo $post->getPublished("d F Y"); ?></abbr></span>
 
                 <a title="Комментариев к <?php echo $post->title; ?>" class="commentslink" href="/post/<?php echo $post->getId(); ?>/#comments"><?php echo $post->getCommentsCount(); ?>&nbsp;<span>Комментариев</span></a>				
 

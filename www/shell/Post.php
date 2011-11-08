@@ -7,6 +7,7 @@ class Post {
     public $body;
     public $published;
     public $comments = array();
+    private static $postLoaded = array();
 
     /**
      *
@@ -15,17 +16,20 @@ class Post {
      * @throws Exception 
      */
     public static function load($fileId) {
-        $pageDir = getPath('pages/');
-        $commentsDir = getPath('comments/');
-        if (file_exists($pageDir . $fileId)) {
+        if (!isset(self::$postLoaded[$fileId])) {
+            $pageDir = getPath('pages/');
+            $commentsDir = getPath('comments/');
+            if (!file_exists($pageDir . $fileId)) {
+                throw new Exception('Post not found');
+            }
             $postData = include $pageDir . $fileId;
             $commentData = array();
             if (file_exists($commentsDir . $fileId)) {
                 $commentData = include $commentsDir . $fileId;
             }
-            return new self($fileId, $postData['title'], $postData['body'], filemtime($pageDir . $fileId), $commentData);
+            self::$postLoaded[$fileId] = new self($fileId, $postData['title'], $postData['body'], filemtime($pageDir . $fileId), $commentData);
         }
-        throw new Exception('Post not found');
+        return self::$postLoaded[$fileId];
     }
 
     private function __construct($fileId, $title, $body, $published = 0, $commetns = array()) {
@@ -41,7 +45,7 @@ class Post {
     }
 
     public function getPublished($format = "d.m.Y H:i") {
-        return date($format, $this->published);
+        return str_replace(array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'), array('января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'), date($format, $this->published));
     }
 
     public function getTruncateBody($length = 100, $truncate_string = '...', $truncate_lastspace = false) {
