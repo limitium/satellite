@@ -74,7 +74,7 @@
 
                 <div class="menu">
                     <ul id="nav" class="menu">
-                        <li class="current_page_item"><a href="http://bestblog.wordpress.com/" title="Blog">Blog</a></li>
+                        <li class="current_page_item"><a href="/" title="Blog">Публикации</a></li>
                         <li class="page_item page-item-2"><a href="http://bestblog.wordpress.com/about/" title="About">About</a></li>
                         <li class="page_item page-item-114"><a href="http://bestblog.wordpress.com/contact/" title="Contact">Contact</a></li>
                         <li class="page_item page-item-255"><a href="http://bestblog.wordpress.com/editors/" title="Editors">Editors</a></li>
