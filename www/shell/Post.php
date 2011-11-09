@@ -81,4 +81,37 @@ class Post {
         return $this->fileId;
     }
 
+    /**
+     *
+     * @return Post 
+     */
+    public function getNext() {
+        $cur = false;
+        foreach (PostController::scanPosts() as $post) {
+            if ($cur) {
+                return Post::load($post['fname']);
+            }
+            if ($post['fname'] == $this->getId()) {
+                $cur = true;
+            }
+        }
+    }
+
+    /**
+     *
+     * @return Post 
+     */
+    public function getPrev() {
+        $prev = null;
+        foreach (PostController::scanPosts() as $post) {
+            if ($post['fname'] == $this->getId()) {
+                if ($prev) {
+                    return Post::load($prev['fname']);
+                }
+                break;
+            }
+            $prev = $post;
+        }
+    }
+
 }

@@ -47,8 +47,8 @@ class Request {
             case 3:
                 if ($this->args[0] == 'archive') {
                     $this->action = 'archive';
-                    $asoc['year'] = $this->args[1];
-                    $asoc['month'] = $this->args[2];
+                    $asoc['year'] = (int) $this->args[1];
+                    $asoc['month'] = (int) $this->args[2];
                 }
                 break;
         }

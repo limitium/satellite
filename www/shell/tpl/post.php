@@ -1,7 +1,15 @@
 <div class="hfeed" id="primarycontent">
     <hr />
     <div class="navigation">
-        <div class="left"><span>«</span> <a href="http://bestblog.wordpress.com/2007/04/26/a-slice-of-life/">A Slice of&nbsp;Life</a></div>				<div class="clear"></div>
+        <?php $prev = $post->getPrev(); ?>
+        <?php $next = $post->getNext(); ?>
+        <?php if ($prev): ?>
+            <div class="left"><span>«</span> <a href="/post/<?php echo $prev->getId(); ?>"><?php echo $prev->title; ?></a></div>		
+        <?php endif; ?>
+        <?php if ($next): ?>
+            <div class="right"><a href="/post/<?php echo $next->getId(); ?>"><?php echo $next->title; ?></a> <span>»</span></div>		
+        <?php endif; ?>
+        <div class="clear"></div>
     </div>
 
     <hr />
