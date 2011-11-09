@@ -8,3 +8,11 @@ function getPath($path = "") {
     $path = str_replace("/", DIRECTORY_SEPARATOR, $path);
     return dirname(__FILE__) . DIRECTORY_SEPARATOR . $path;
 }
+
+function getDomen() {
+    return str_replace(".ru", "", $_SERVER['HTTP_HOST']);
+}
+
+function getDomenPath($path = "") {
+    return getPath("../data/" . getDomen() . "/" . $path);
+}

@@ -29,13 +29,13 @@
         <link rel="alternate" type="application/rss+xml" title="Best Blog on Wordpress » Comments Feed" href="http://bestblog.wordpress.com/comments/feed/" />
 
 
-        <link rel="stylesheet" type="text/css" media="screen" href="/css/style_002.css" />
-        <link rel="stylesheet" type="text/css" media="print" href="/css/print.css" />        
-        <link rel="stylesheet" href="/css/global.css" type="text/css" />
-        <link rel="stylesheet" id="loggedout-subscribe-css" href="/css/widget.css" type="text/css" media="all" />
-        <link rel="stylesheet" id="post-reactions-css" href="/css/style.css" type="text/css" media="all" />
-        <link rel="stylesheet" type="text/css" id="gravatar-card-css" href="/css/hovercard.css" />
-        <link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="/css/services.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="/pub/css/style_002.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="/pub/css/print.css" />        
+        <link rel="stylesheet" href="/pub/css/global.css" type="text/css" />
+        <link rel="stylesheet" id="loggedout-subscribe-css" href="/pub/css/widget.css" type="text/css" media="all" />
+        <link rel="stylesheet" id="post-reactions-css" href="/pub/css/style.css" type="text/css" media="all" />
+        <link rel="stylesheet" type="text/css" id="gravatar-card-css" href="/pub/css/hovercard.css" />
+        <link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="/pub/css/services.css" />
         <style type="text/css">
             #header {
                 background:#3371a3 url(http://bestblog.files.wordpress.com/2006/11/cropped-besblogonwordpress1.jpg) center repeat-y;
@@ -55,9 +55,9 @@
         </style>
 
 
-        <script type="text/javascript" src="/js/jquery.js"></script>
-        <script type="text/javascript" src="/js/widget.js"></script>
-        <script type="text/javascript" async="" src="/js/quant.js"></script>
+        <script type="text/javascript" src="/pub/js/jquery.js"></script>
+        <script type="text/javascript" src="/pub/js/widget.js"></script>
+        <script type="text/javascript" async="" src="/pub/js/quant.js"></script>
         <script type="text/javascript">
             /* <![CDATA[ */
             function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}

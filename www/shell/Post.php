@@ -17,10 +17,10 @@ class Post {
      */
     public static function load($fileId) {
         if (!isset(self::$postLoaded[$fileId])) {
-            $pageDir = getPath('pages/');
-            $commentsDir = getPath('comments/');
+            $pageDir = getDomenPath('pages/');
+            $commentsDir = getDomenPath('comments/');
             if (!file_exists($pageDir . $fileId)) {
-                throw new Exception('Post not found');
+                throw new Exception('Post not found '.$fileId);
             }
             $postData = include $pageDir . $fileId;
             $commentData = array();

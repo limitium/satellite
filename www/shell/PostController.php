@@ -10,7 +10,7 @@ class PostController {
      */
     public static function scanPosts() {
         if (!self::$postsMeta) {
-            $pageDir = getPath('pages/');
+            $pageDir = getDomenPath('pages/');
             $sortedByDate = array();
             foreach (scandir($pageDir) as $fileId) {
                 if (is_file($pageDir . $fileId)) {
@@ -51,7 +51,7 @@ class PostController {
 
     public function getPost(Request $request) {
         $postId = $request->get('id');
-        if (!file_exists(getPath('pages/') . $postId)) {
+        if (!file_exists(getDomenPath('pages/') . $postId)) {
             throw new Exception('post not found');
         }
         $this->post = Post::load($postId);
