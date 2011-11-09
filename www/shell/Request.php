@@ -30,22 +30,26 @@ class Request {
 
         $asoc = array();
 
+        $this->controller = 'post';
+        $this->action = 'list';
+
         switch (sizeof($this->args)) {
             case 2:
                 if ($this->args[0] == 'page') {
                     $asoc['page'] = $this->args[1];
-                    $this->controller = 'post';
                     $this->action = 'list';
                 }
                 if ($this->args[0] == 'post') {
                     $asoc['id'] = $this->args[1];
-                    $this->controller = 'post';
                     $this->action = 'post';
                 }
                 break;
-            default:
-                $this->controller = 'post';
-                $this->action = 'list';
+            case 3:
+                if ($this->args[0] == 'archive') {
+                    $this->action = 'archive';
+                    $asoc['year'] = $this->args[1];
+                    $asoc['month'] = $this->args[2];
+                }
                 break;
         }
         $this->args = $asoc;

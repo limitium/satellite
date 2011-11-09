@@ -28,7 +28,7 @@ class Dispatcher {
     public static function sendLayout($content) {
         echo View::create('layout', array('content' => $content,
                     'recentPosts' => PostController::getRecentPosts(),
-                    'archive' => PostController::getArchive()))
+                    'archive' => PostController::getArchiveMonth()))
                 ->render();
     }
 

@@ -28,6 +28,19 @@ class PostController {
         return self::$postsMeta;
     }
 
+    public function getArchive(Request $request) {
+        $from = mktime(0, 0, 0, $request->get('month'), 1, $request->get('year'));
+        $to = mktime(0, 0, 0, $request->get('month') + 1, 0, $request->get('year'));
+        $posts = array();
+        foreach (self::scanPosts() as $post) {
+            if ($post['time'] >= $from && $post['time'] <= $to) {
+                $posts[] = Post::load($post['fname']);
+            }
+        }
+        $this->archiveDate = self::getMonthName($from);
+        $this->posts = $posts;
+    }
+
     public function getList(Request $request) {
         $posts = array();
         foreach (self::scanPosts() as $post) {
@@ -56,15 +69,18 @@ class PostController {
         return $posts;
     }
 
-    public static function getArchive() {
+    public static function getArchiveMonth() {
         $months = array();
         foreach (self::scanPosts() as $post) {
             $k = date("Y/m", $post['time']);
             if (!isset($months[$k])) {
-                $months[$k] = str_replace(array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'), array('Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'), date("F Y", $post['time']));
+                $months[$k] = self::getMonthName($post['time']);
             }
         }
         return $months;
+    }
+    private static function getMonthName($time){
+        return str_replace(array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'), array('Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'), date("F Y", $time));
     }
 
 }
