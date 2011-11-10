@@ -13,22 +13,24 @@ class Dispatcher {
         $pc = new $controller();
         $pc->$action($request);
 
-        self::printPage(View::create($request->action, (array) $pc)->render());
+        self::printPage($request, View::create($request->action, (array) $pc)->render());
     }
 
     public function getModule($request) {
         
     }
 
-    public static function printPage($content) {
+    public static function printPage($request, $content) {
         self::sendHeaders();
-        self::sendLayout($content);
+        self::sendLayout($request, $content);
     }
 
-    public static function sendLayout($content) {
+    public static function sendLayout($request, $content) {
         echo View::create('layout', array('content' => $content,
                     'recentPosts' => PostController::getRecentPosts(),
-                    'archive' => PostController::getArchiveMonth()))
+                    'archive' => PostController::getArchiveMonth(),
+                    'pages' => $request->cfg['pages'],
+                    'about' => $request->cfg['about']))
                 ->render();
     }
 

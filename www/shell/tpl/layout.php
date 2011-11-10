@@ -74,12 +74,10 @@
 
                 <div class="menu">
                     <ul id="nav" class="menu">
-                        <li class="current_page_item"><a href="/" title="Blog">Публикации</a></li>
-                        <li class="page_item page-item-2"><a href="http://bestblog.wordpress.com/about/" title="About">About</a></li>
-                        <li class="page_item page-item-114"><a href="http://bestblog.wordpress.com/contact/" title="Contact">Contact</a></li>
-                        <li class="page_item page-item-255"><a href="http://bestblog.wordpress.com/editors/" title="Editors">Editors</a></li>
-                        <li class="page_item page-item-81"><a href="http://bestblog.wordpress.com/whats-new/" title="What’s&nbsp;New!">What’s&nbsp;New!</a></li>
-                        <li class="page_item page-item-82"><a href="http://bestblog.wordpress.com/faq/" title="FAQ">FAQ</a></li>
+                        <li class="c1urrent_page_item"><a href="/" title="Blog">Публикации</a></li>
+                        <?php foreach ($pages as $url => $page): ?>
+                            <li class="page_item page-item-<?php echo $url; ?>"><a href="/<?php echo $url; ?>" title="<?php echo $page['title']; ?>"><?php echo $page['title']; ?></a></li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
             </div>
@@ -98,9 +96,7 @@
                 <div class="secondary">
 
                     <div id="text-1" class="widget widget_text"><h2 class="widgettitle">О блоге</h2>
-                        <div class="textwidget">Best Blog on Wordpress searches for and 
-                            reviews the best blogs on wordpress.com  We also write articles to guide
-                            new and old bloggers!</div>
+                        <div class="textwidget"><?php echo $about; ?></div>
                     </div>		
                     <div id="recent-posts-2" class="widget widget_recent_entries">		
                         <h2 class="widgettitle">Последние публикации</h2>
@@ -113,8 +109,8 @@
                     <div id="archives-2" class="widget widget_archive">
                         <h2 class="widgettitle">Архив</h2>
                         <ul>
-                            <?php foreach ($archive as $uri=>$text): ?>
-                            <li><a href="/archive/<?php echo $uri; ?>" title="<?php echo $text; ?>"><?php echo $text; ?></a></li>
+                            <?php foreach ($archive as $uri => $text): ?>
+                                <li><a href="/archive/<?php echo $uri; ?>" title="<?php echo $text; ?>"><?php echo $text; ?></a></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>

@@ -6,16 +6,18 @@ class Request {
     public $controller;
     public $action;
     public $args = array();
+    public $cfg;
 
     /**
      *
      * @return Request 
      */
-    public static function create() {
-        return new self();
+    public static function create($cfg) {
+        return new self($cfg);
     }
 
-    private function __construct() {
+    private function __construct($cfg) {
+        $this->cfg = $cfg;
         $this->parse();
     }
 
@@ -34,6 +36,12 @@ class Request {
         $this->action = 'list';
 
         switch (sizeof($this->args)) {
+            case 1:
+                if (isset($this->cfg['pages'][$this->args[0]])) {
+                    $asoc['page'] = $this->args[0];
+                    $this->action = 'page';
+                }
+                break;
             case 2:
                 if ($this->args[0] == 'page') {
                     $asoc['page'] = $this->args[1];

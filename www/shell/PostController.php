@@ -28,6 +28,11 @@ class PostController {
         return self::$postsMeta;
     }
 
+    public function getPage(Request $request) {
+        $this->page = $request->cfg['pages'][$request->get('page')];
+        $this->url = $request->get('page');
+    }
+
     public function getArchive(Request $request) {
         $from = mktime(0, 0, 0, $request->get('month'), 1, $request->get('year'));
         $to = mktime(0, 0, 0, $request->get('month') + 1, 0, $request->get('year'));
@@ -79,7 +84,8 @@ class PostController {
         }
         return $months;
     }
-    private static function getMonthName($time){
+
+    private static function getMonthName($time) {
         return str_replace(array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'), array('Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'), date("F Y", $time));
     }
 
