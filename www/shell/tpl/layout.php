@@ -5,13 +5,13 @@
         <meta name="generator" content="WordPress.com" />
 
         <meta property="og:type" content="blog" />
-        <meta property="og:title" content="Best Blog on Wordpress" />
-        <meta property="og:url" content="http://bestblog.wordpress.com" />
+        <meta property="og:title" content="<?php echo $title; ?>" />
+        <meta property="og:url" content="/" />
         <meta property="og:description" content="" />
-        <meta property="og:site_name" content="Best Blog on Wordpress" />
+        <meta property="og:site_name" content="<?php echo $title; ?>" />
         <meta property="og:image" content="" />
 
-        <meta name="application-name" content="Best Blog on Wordpress" />
+        <meta name="application-name" content="<?php echo $title; ?>" />
         <meta name="msapplication-window" content="width=device-width;height=device-height" />
         <meta name="msapplication-task" content="name=Subscribe;action-uri=http://bestblog.wordpress.com/feed/;icon-uri=http://s2.wp.com/i/favicon.ico" />
         <meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=http://s2.wp.com/i/favicon.ico" />
@@ -25,8 +25,8 @@
         <link rel="icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48" />
         <link rel="apple-touch-icon-precomposed" href="http://s0.wp.com/i/webclip.png" />
         <link rel="pingback" href="http://bestblog.wordpress.com/xmlrpc.php" />
-        <link rel="alternate" type="application/rss+xml" title="Best Blog on Wordpress » Feed" href="http://bestblog.wordpress.com/feed/" />
-        <link rel="alternate" type="application/rss+xml" title="Best Blog on Wordpress » Comments Feed" href="http://bestblog.wordpress.com/comments/feed/" />
+        <link rel="alternate" type="application/rss+xml" title="<?php echo $title; ?> » Feed" href="http://bestblog.wordpress.com/feed/" />
+        <link rel="alternate" type="application/rss+xml" title="<?php echo $title; ?> » Comments Feed" href="http://bestblog.wordpress.com/comments/feed/" />
 
 
         <link rel="stylesheet" type="text/css" media="screen" href="/pub/css/style_002.css" />
@@ -63,13 +63,13 @@
             function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
             /* ]]> */
         </script>
-        <title> Best Blog on Wordpress</title>
+        <title> <?php echo $title; ?></title>
     </head>
 
     <body class="typekit-enabled highlander-enabled highlander-light">
         <div id="page">
             <div id="header">
-                <h1><a href="http://bestblog.wordpress.com/">Best Blog on Wordpress</a></h1>
+                <h1><a href="/"><?php echo $title; ?></a></h1>
                 <p class="description"></p>
 
                 <div class="menu">
@@ -219,11 +219,7 @@
             skimlinks();
         </script> 		
         <script type="text/javascript" src="Best%20Blog%20on%20Wordpress_files/beacon.js"></script><script type="text/javascript">try{COMSCORE.beacon({c1:2,c2:7518284});}catch(e){}</script><noscript><p class="robots-nocontent"><img src="http://b.scorecardresearch.com/p?cj=1c1=2&#038;c2=7518284" alt="" style="display:none" width="1" height="1" /></p></noscript><script src="Best%20Blog%20on%20Wordpress_files/w.js" type="text/javascript"></script>
-        <script type="text/javascript">
-            st_go({'blog':'55544','v':'wpcom','user_id':'0','post':'0','subd':'bestblog'});
-            ex_go({'crypt':'UE40eW5QN0p8M2Y/RE1LVmwrVi5vQS5fVFtfdHBbPyw1VXIrU3hWLHhzVndTdktBX0ddJnpXRjVaOTd6fj1YMX4ydzRiVE1bNlpOMFk3W2hFTXh1VGUsQXp4UiU5Y1F8WlMudG8sUVM2Wmc3V11Vc19LVTl2ZD82MHd0Y1Y0RlltdXx6cm5DYmMvQk9jb1VNSEFfdFBPdl9bcG05alg2eU4mfF9ZUnJWbzUwYXU2U1lzRjlBUF9yWUQmOWlyQzkvek02OUJ8QT9MVDJjMGZmOFY0MF10eElKNGdycE5zYS9EeU5XMHlOS0gzNFdKNlRIRjZZPUZYMDVY'});
-            addLoadEvent(function(){linktracker_init('55544',0);});
-        </script><img id="wpstats" src="/img/g.gif" alt="" />
+        <img id="wpstats" src="/img/g.gif" alt="" />
         <img id="wpstats2" src="/img/g_002.gif" alt="" style="display: none;"/>
         <noscript>
             <img src="http://stats.wordpress.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>

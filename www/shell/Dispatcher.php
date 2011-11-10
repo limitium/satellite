@@ -30,6 +30,7 @@ class Dispatcher {
                     'recentPosts' => PostController::getRecentPosts(),
                     'archive' => PostController::getArchiveMonth(),
                     'pages' => $request->cfg['pages'],
+                    'title' => $request->cfg['title'],
                     'about' => $request->cfg['about']))
                 ->render();
     }
