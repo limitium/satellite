@@ -44,49 +44,8 @@
 
         <h4><span id="comments"><?php echo $post->getCommentsCount(); ?></span> Ответов к “<?php echo $post->title; ?>”</h4>
 
-        <div class="metalinks">
-            <span class="commentsrsslink"><a href="/post/<?php echo $post->getId(); ?>/feed/">Feed for this Entry</a></span>
-            <span class="trackbacklink"><a title="Copy this URI to trackback this entry." href="/post/<?php echo $post->getId(); ?>/trackback/">Trackback Address</a></span>		</div>
-        <hr />
 
         <ol id="commentlist">
-            <li id="comment-55596" class="comment even thread-even depth-1 highlander-comment">
-                <div id="div-comment-55596">
-                    <span class="comment-author vcard">
-                        <img width="48" height="48" class="avatar avatar-48 grav-hashed grav-hijack" src="http://1.gravatar.com/avatar/b52cb736f100d405ec8f5367895222fd?s=48&amp;d=identicon&amp;r=G" alt="" id="grav-b52cb736f100d405ec8f5367895222fd-0">		<a title="Permanent Link to this Comment" class="counter" href="#comment-55596">1</a>
-                        <span class="commentauthor fn"><a class="url" rel="external nofollow" href="http://www.siku-moja.blogspot.com">collins</a></span>
-                    </span>
-                    <small class="comment-meta">
-                        <a title="3 years, 6 months ago." href="#comment-55596">25 April, 2008 at 8:59 pm</a>	</small>
-
-                    <div class="comment-content">
-                        <p>nice blog and quite good page ranking,how did you do it?</p>
-
-                    </div>
-
-                    <div class="reply">
-                        <a onclick="return addComment.moveForm(&quot;div-comment-55596&quot;, &quot;55596&quot;, &quot;respond&quot;, &quot;<?php echo $post->getId(); ?>&quot;)" href="/2007/06/13/elle-effect/?replytocom=55596#respond" class="comment-reply-link">Reply</a>	</div>
-                </div>
-            </li>
-            <li id="comment-55598" class="comment odd alt thread-odd thread-alt depth-1 highlander-comment">
-                <div id="div-comment-55598">
-                    <span class="comment-author vcard">
-                        <img width="48" height="48" class="avatar avatar-48 grav-hashed grav-hijack" src="http://1.gravatar.com/avatar/3dc8f833402e23114198af2d49a3c785?s=48&amp;d=identicon&amp;r=G" alt="" id="grav-3dc8f833402e23114198af2d49a3c785-0">		<a title="Permanent Link to this Comment" class="counter" href="#comment-55598">2</a>
-                        <span class="commentauthor fn"><a class="url" rel="external nofollow" href="http://www.qibt.co.nr">kang Choi</a></span>
-                    </span>
-                    <small class="comment-meta">
-                        <a title="3 years, 6 months ago." href="#comment-55598">27 April, 2008 at 10:02 pm</a>	</small>
-
-                    <div class="comment-content">
-                        <p>I like the topic that you chose and it gives the people to make more interest about what it is going to next about Elle Effect.</p>
-
-                    </div>
-
-
-                    <div class="reply">
-                        <a onclick="return addComment.moveForm(&quot;div-comment-55598&quot;, &quot;55598&quot;, &quot;respond&quot;, &quot;<?php echo $post->getId(); ?>&quot;)" href="/2007/06/13/elle-effect/?replytocom=55598#respond" class="comment-reply-link">Reply</a>	</div>
-                </div>
-            </li>
         </ol> <!-- END #commentlist -->
 
         <div class="navigation">

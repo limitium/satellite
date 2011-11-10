@@ -13,29 +13,17 @@
 
         <meta name="application-name" content="<?php echo $title; ?>" />
         <meta name="msapplication-window" content="width=device-width;height=device-height" />
-        <meta name="msapplication-task" content="name=Subscribe;action-uri=http://bestblog.wordpress.com/feed/;icon-uri=http://s2.wp.com/i/favicon.ico" />
-        <meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=http://s2.wp.com/i/favicon.ico" />
-        <meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico" />
-        <meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico" />
 
-        <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://bestblog.wordpress.com/xmlrpc.php?rsd" />
-        <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://bestblog.wordpress.com/wp-includes/wlwmanifest.xml" /> 
-        <link rel="shortlink" href="http://wp.me/erS" />
         <link rel="shortcut icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48" />
         <link rel="icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48" />
-        <link rel="apple-touch-icon-precomposed" href="http://s0.wp.com/i/webclip.png" />
-        <link rel="pingback" href="http://bestblog.wordpress.com/xmlrpc.php" />
-        <link rel="alternate" type="application/rss+xml" title="<?php echo $title; ?> » Feed" href="http://bestblog.wordpress.com/feed/" />
-        <link rel="alternate" type="application/rss+xml" title="<?php echo $title; ?> » Comments Feed" href="http://bestblog.wordpress.com/comments/feed/" />
 
-
-        <link rel="stylesheet" type="text/css" media="screen" href="/pub/css/style_002.css" />
-        <link rel="stylesheet" type="text/css" media="print" href="/pub/css/print.css" />        
-        <link rel="stylesheet" href="/pub/css/global.css" type="text/css" />
-        <link rel="stylesheet" id="loggedout-subscribe-css" href="/pub/css/widget.css" type="text/css" media="all" />
-        <link rel="stylesheet" id="post-reactions-css" href="/pub/css/style.css" type="text/css" media="all" />
-        <link rel="stylesheet" type="text/css" id="gravatar-card-css" href="/pub/css/hovercard.css" />
-        <link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="/pub/css/services.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="/css/style_002.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="/css/print.css" />        
+        <link rel="stylesheet" href="/css/global.css" type="text/css" />
+        <link rel="stylesheet" id="loggedout-subscribe-css" href="/css/widget.css" type="text/css" media="all" />
+        <link rel="stylesheet" id="post-reactions-css" href="/css/style.css" type="text/css" media="all" />
+        <link rel="stylesheet" type="text/css" id="gravatar-card-css" href="/css/hovercard.css" />
+        <link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="/css/services.css" />
         <style type="text/css">
             #header {
                 background:#3371a3 url(http://bestblog.files.wordpress.com/2006/11/cropped-besblogonwordpress1.jpg) center repeat-y;
@@ -55,9 +43,9 @@
         </style>
 
 
-        <script type="text/javascript" src="/pub/js/jquery.js"></script>
-        <script type="text/javascript" src="/pub/js/widget.js"></script>
-        <script type="text/javascript" async="" src="/pub/js/quant.js"></script>
+        <script type="text/javascript" src="/js/jquery.js"></script>
+        <script type="text/javascript" src="/js/widget.js"></script>
+        <script type="text/javascript" async="" src="/js/quant.js"></script>
         <script type="text/javascript">
             /* <![CDATA[ */
             function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
@@ -125,54 +113,6 @@
 
         <hr />
 
-        <p id="footer"><small>
-                Theme: <a href="http://theme.wordpress.com/themes/k2/">K2-lite</a> by <a href="http://getk2.com/" rel="designer">k2 team</a>.  <a href="http://wordpress.com/?ref=footer" rel="generator">Blog at WordPress.com</a>.
-                <br /> 
-                <a href="http://bestblog.wordpress.com/feed/">RSS Entries</a> and <a href="http://bestblog.wordpress.com/comments/feed/">RSS Comments</a></small></p>
-
-        <script type="text/javascript">
-            // <![CDATA[
-            (function() {
-                try{
-                    if ( window.external &&'msIsSiteMode' in window.external) {
-                        if (window.external.msIsSiteMode()) {
-                            var jl = document.createElement('script');
-                            jl.type='text/javascript';
-                            jl.async=true;
-                            jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
-                            var s = document.getElementsByTagName('script')[0];
-                            s.parentNode.insertBefore(jl, s);
-                        }
-                    }
-                }catch(e){}
-            })();
-            // ]]>
-        </script><script type="text/javascript" src="Best%20Blog%20on%20Wordpress_files/gprofiles.js"></script>
-        <script type="text/javascript">
-            /* <![CDATA[ */
-            var WPGroHo = {"my_hash":""};
-
-            /* ]]> */
-        </script>
-        <script type="text/javascript" src="Best%20Blog%20on%20Wordpress_files/wpgroho.js"></script>
-
-        <script type="text/javascript">
-            var _qevents = _qevents || [];
-            (function() {var elem = document.createElement('script');elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";elem.async = true;elem.type = "text/javascript";var scpt = document.getElementsByTagName('script')[0];scpt.parentNode.insertBefore(elem, scpt);  })();
-            _qevents.push( { qacct:"p-18-mFEk4J448M", labels:",language.en,type.wpcom" } );
-        </script>
-        <noscript><div style="display: none;"><img src="//pixel.quantserve.com/pixel/p-18-mFEk4J448M.gif?labels=%2Clanguage.en%2Ctype.wpcom" height="1" width="1" alt="" /></div></noscript>
-
-        <script>jQuery(document).ready(function($){ Gravatar.profile_cb = function( h, d ) { WPGroHo.syncProfileData( h, d );	}; Gravatar.my_hash = WPGroHo.my_hash; Gravatar.init( 'body', '#wpadminbar' ); });</script>	<div style="display:none">
-            <div class="grofile-hash-map-3dc8f833402e23114198af2d49a3c785">
-            </div>
-            <div class="grofile-hash-map-b52cb736f100d405ec8f5367895222fd">
-            </div>
-            <div class="grofile-hash-map-d45aa3376577dfddd8ad03cb20268e55">
-            </div>
-            <div class="grofile-hash-map-a25854ca9c27a691475e67d262bbe0a0">
-            </div>
-        </div>
         <style type="text/css">
 
             .reblog-from img                   { margin: 0 10px 0 0; vertical-align: middle; padding: 0; border: 0; }
@@ -185,44 +125,7 @@
             .reblog-post ul.thumb-list li img  { margin: 0; padding: 0; border: 0; }
             .reblog-post                       { border-left: 3px solid #eee; padding-left: 15px; }
         </style>	
-        <div style="bottom: -263px;" id="bit" class="loggedout-follow-normal">
-            <a class="bsub" href="javascript:void(0)"><span id="bsub-text">Follow</span></a>
-            <div id="bitsubscribe">
 
-                <h3><label for="loggedout-follow-field">Follow Best Blog on Wordpress</label></h3>
-                <form action="http://subscribe.wordpress.com" method="post" accept-charset="utf-8" id="loggedout-follow">
-                    <p>Get every new post delivered to your Inbox.</p>
-
-                    <p class="bit-follow-count">Join 213 other followers</p>		
-
-                    <p>
-                        <input name="email" style="width: 95%; padding: 1px 2px;" value="Enter email address" onfocus='this.value=(this.value=="Enter email address") ? "" : this.value;' onblur='this.value=(this.value=="") ? "Enter email address" : this.value;' id="loggedout-follow-field" type="text" />
-                    </p>
-
-                    <input name="action" value="subscribe" type="hidden" />
-                    <input name="blog_id" value="55544" type="hidden" />
-                    <input name="source" value="http://bestblog.wordpress.com/" type="hidden" />
-                    <input name="sub-type" value="loggedout-follow" type="hidden" />
-
-                    <input id="_wpnonce" name="_wpnonce" value="752b1fadea" type="hidden" />
-                    <input name="_wp_http_referer" value="/" type="hidden" />
-                    <p id="bsub-subscribe-button"><input value="Sign me up!" type="submit" /></p>
-                </form>
-                <div id="bsub-credit"><a href="http://wordpress.com/">Powered by WordPress.com</a></div>
-            </div><!-- #bitsubscribe -->
-        </div><!-- #bit -->
-
-        <script type="text/javascript" src="Best%20Blog%20on%20Wordpress_files/wordpress.js"></script> 
-        <script type="text/javascript">
-            var skimlinks_pub_id = "725X584219"
-            var skimlinks_sitename = 'bestblog.wordpress.com';
-            skimlinks();
-        </script> 		
-        <script type="text/javascript" src="Best%20Blog%20on%20Wordpress_files/beacon.js"></script><script type="text/javascript">try{COMSCORE.beacon({c1:2,c2:7518284});}catch(e){}</script><noscript><p class="robots-nocontent"><img src="http://b.scorecardresearch.com/p?cj=1c1=2&#038;c2=7518284" alt="" style="display:none" width="1" height="1" /></p></noscript><script src="Best%20Blog%20on%20Wordpress_files/w.js" type="text/javascript"></script>
-        <img id="wpstats" src="/img/g.gif" alt="" />
-        <img id="wpstats2" src="/img/g_002.gif" alt="" style="display: none;"/>
-        <noscript>
-            <img src="http://stats.wordpress.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
 
     </body>
 </html>
