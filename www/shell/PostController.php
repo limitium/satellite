@@ -48,10 +48,27 @@ class PostController {
 
     public function getList(Request $request) {
         $posts = array();
-        foreach (self::scanPosts() as $post) {
-            $posts[] = Post::load($post['fname']);
+        $pages = array();
+
+        $page = $request->has('page') && $request->get('page') ? $request->get('page') : 1;
+
+        $postFiles = self::scanPosts();
+
+        $postsPerPage = 5;
+
+        $from = ($page - 1) * $postsPerPage;
+        $to = $from + $postsPerPage;
+        $to = $to > sizeof($postFiles) ? sizeof($postFiles) : $to;
+        for ($i = $from; $i < $to; $i++) {
+            $posts[] = Post::load($postFiles[$i]['fname']);
         }
         $this->posts = $posts;
+
+
+        for ($i = 0; $i < sizeof($postFiles) / $postsPerPage; $i++) {
+            $pages[] = $i + 1;
+        }
+        $this->pages = $pages;
     }
 
     public function getPost(Request $request) {

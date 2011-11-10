@@ -23,4 +23,8 @@
         </div> <!-- #post-ID -->
     <?php endforeach; ?>
 </div><!-- #primarycontent .hfeed -->
-<p align="center"><a href="/page/2/">Следующая страница »</a></p>
+<p align="center">
+    <?php foreach ($pages as $page): ?>
+        <a href="/page/<?php echo $page; ?>"><?php echo $page; ?></a>
+    <?php endforeach; ?>
+</p>
