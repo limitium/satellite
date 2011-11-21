@@ -9,15 +9,14 @@ class Request {
     public $cfg;
 
     /**
-     *
-     * @return Request 
+     * @static
+     * @return Request
      */
-    public static function create($cfg) {
-        return new self($cfg);
+    public static function create() {
+        return new self();
     }
 
-    private function __construct($cfg) {
-        $this->cfg = $cfg;
+    private function __construct() {
         $this->parse();
     }
 
@@ -37,10 +36,8 @@ class Request {
 
         switch (sizeof($this->args)) {
             case 1:
-                if (isset($this->cfg['pages'][$this->args[0]])) {
-                    $asoc['page'] = $this->args[0];
-                    $this->action = 'page';
-                }
+                $asoc['page'] = $this->args[0];
+                $this->action = 'page';
                 break;
             case 2:
                 if ($this->args[0] == 'page') {
@@ -55,8 +52,8 @@ class Request {
             case 3:
                 if ($this->args[0] == 'archive') {
                     $this->action = 'archive';
-                    $asoc['year'] = (int) $this->args[1];
-                    $asoc['month'] = (int) $this->args[2];
+                    $asoc['year'] = (int)$this->args[1];
+                    $asoc['month'] = (int)$this->args[2];
                 }
                 break;
         }
