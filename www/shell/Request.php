@@ -41,7 +41,7 @@ class Request {
                 break;
             case 2:
                 if ($this->args[0] == 'page') {
-                    $asoc['page'] = $this->args[1];
+                    $asoc['page'] = (int) $this->args[1];
                     $this->action = 'list';
                 }
                 if ($this->args[0] == 'post') {

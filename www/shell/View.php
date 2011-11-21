@@ -21,9 +21,12 @@ class View {
     }
 
     public function render() {
-        $viewFile = getPath('tpl/') . $this->tpl . '.php';
+        $viewFile = getDomenPath('tpl/') . $this->tpl . '.php';
         if (!file_exists($viewFile)) {
-            throw new Exception('View ' . $viewFile . ' not found');
+            $viewFile = getPath('tpl/') . $this->tpl . '.php';
+            if (!file_exists($viewFile)) {
+                throw new Exception('View ' . $viewFile . ' not found');
+            }
         }
         ob_start();
         extract($this->data);
