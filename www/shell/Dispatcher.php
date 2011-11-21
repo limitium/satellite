@@ -39,16 +39,15 @@ class Dispatcher {
     }
 
     /**
-     * @static
      * @param $request
      * @return PostController
      */
-    public static function executeController($request) {
+    public function executeController($request) {
         $controller = ucfirst($request->controller . 'Controller');
         $action = 'get' . ucfirst($request->action);
 
         $pc = new $controller();
-        $pc->$action($request);
+        $pc->$action($request, $this);
         return $pc;
     }
 

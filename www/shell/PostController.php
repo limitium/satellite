@@ -28,8 +28,8 @@ class PostController {
         return self::$postsMeta;
     }
 
-    public function getPage(Request $request) {
-        $this->page = $request->cfg['pages'][$request->get('page')];
+    public function getPage(Request $request,Dispatcher $dispatcher) {
+        $this->page = $dispatcher->cfg['pages'][$request->get('page')];
         $this->url = $request->get('page');
     }
 
