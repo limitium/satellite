@@ -5,8 +5,8 @@ class PostController {
     public static $postsMeta = null;
 
     /**
-     *
-     * @return array of post files 
+     * @static
+     * @return Array[]
      */
     public static function scanPosts() {
         if (!self::$postsMeta) {
@@ -28,8 +28,8 @@ class PostController {
         return self::$postsMeta;
     }
 
-    public function getPage(Request $request) {
-        $this->page = $request->cfg['pages'][$request->get('page')];
+    public function getPage(Request $request,Dispatcher $dispatcher) {
+        $this->page = $dispatcher->cfg['pages'][$request->get('page')];
         $this->url = $request->get('page');
     }
 
@@ -79,6 +79,10 @@ class PostController {
         $this->post = Post::load($postId);
     }
 
+    /**
+     * @static
+     * @return Post[]
+     */
     public static function getRecentPosts() {
         $posts = array();
         $max = 5;
@@ -91,6 +95,10 @@ class PostController {
         return $posts;
     }
 
+    /**
+     * @static
+     * @return String[]
+     */
     public static function getArchiveMonth() {
         $months = array();
         foreach (self::scanPosts() as $post) {
@@ -106,4 +114,7 @@ class PostController {
         return str_replace(array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'), array('Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'), date("F Y", $time));
     }
 
+    public function asArray(){
+        return (array)$this;
+    }
 }

@@ -2,40 +2,67 @@
 
 class Dispatcher {
 
-    public static function execute(Request $request) {
-        if ($request->isPost()) {
-            throw new Exception('post not allowed');
+    /**
+     * @var Request
+     */
+    public $request;
+    public $cfg;
+
+    private function __construct() {
+
+    }
+
+    /**
+     * @param Array $cfg
+     * @return Dispatcher
+     */
+    public static function create($cfg) {
+        $dispatcher = new self;
+        $dispatcher->cfg = $cfg;
+        return $dispatcher;
+    }
+
+    public function execute(Request $request) {
+        $this->request = $request;
+
+        try {
+            $view = $this->makeView($this->executeController($request));
+        } catch (Exception $e) {
+            $view = $e->getMessage();
         }
 
+        $this->printPage($view);
+    }
+
+    public function makeView($pc) {
+        return View::create($this->request->action, $pc->asArray())->render();
+    }
+
+    /**
+     * @param $request
+     * @return PostController
+     */
+    public function executeController($request) {
         $controller = ucfirst($request->controller . 'Controller');
         $action = 'get' . ucfirst($request->action);
 
         $pc = new $controller();
-        $pc->$action($request);
-
-        self::printPage($request, View::create($request->action, (array) $pc)->render());
+        $pc->$action($request, $this);
+        return $pc;
     }
 
-    public function getModule($request) {
-        
+    public function printPage($content) {
+        $this->sendHeaders();
+        $this->sendLayout($content);
     }
 
-    public static function printPage($request, $content) {
-        self::sendHeaders();
-        self::sendLayout($request, $content);
+    public function sendLayout($content) {
+        echo View::create('layout', array('content' => $content, 'recentPosts' => PostController::getRecentPosts(),
+                                         'archive' => PostController::getArchiveMonth(), 'pages' => $this->cfg['pages'],
+                                         'title' => $this->cfg['title'], 'about' => $this->cfg['about']))->render();
     }
 
-    public static function sendLayout($request, $content) {
-        echo View::create('layout', array('content' => $content,
-                    'recentPosts' => PostController::getRecentPosts(),
-                    'archive' => PostController::getArchiveMonth(),
-                    'pages' => $request->cfg['pages'],
-                    'title' => $request->cfg['title'],
-                    'about' => $request->cfg['about']))
-                ->render();
-    }
-
-    public static function sendHeaders() {
+    public function sendHeaders() {
         header("Content-Type: text/html; charset=UTF-8");
     }
 
