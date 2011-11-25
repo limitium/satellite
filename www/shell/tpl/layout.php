@@ -24,14 +24,6 @@
         <link rel="stylesheet" id="post-reactions-css" href="/css/style.css" type="text/css" media="all" />
         <link rel="stylesheet" type="text/css" id="gravatar-card-css" href="/css/hovercard.css" />
         <link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="/css/services.css" />
-        <style type="text/css">
-            #header {
-                background:#3371a3 url(http://bestblog.files.wordpress.com/2006/11/cropped-besblogonwordpress1.jpg) center repeat-y;
-            }
-            #header h1 a, #header .description {
-                display: none;
-            }
-        </style>
         <style type="text/css">.recentcomments a{display:inline !important;padding: 0 !important;margin: 0 !important;}</style>
         <style type="text/css">
             table.recentcommentsavatar img.avatar {border: 0px; margin:0;}
