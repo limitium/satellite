@@ -56,7 +56,7 @@
                     <ul id="nav" class="menu">
                         <li class="c1urrent_page_item"><a href="/" title="Blog">Публикации</a></li>
                         <?php foreach ($pages as $url => $page): ?>
-                            <li class="page_item page-item-<?php echo $url; ?>"><a href="/<?php echo $url; ?>" title="<?php echo $page['title']; ?>"><?php echo $page['title']; ?></a></li>
+                            <li class="page_item page-item-<?php echo $url; ?>"><a href="/<?php echo $url; ?>" title="<?php echo $page->title; ?>"><?php echo $page->title; ?></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>

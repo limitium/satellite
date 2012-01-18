@@ -1,62 +1,22 @@
 <?php
 
-class PostController {
+class PostController extends PageController {
 
-    public static $postsMeta = null;
 
-    /**
-     * @static
-     * @return Array[]
-     */
-    public static function scanPosts() {
-        if (!self::$postsMeta) {
-            $pageDir = getDomenPath('pages/');
-            $sortedByDate = array();
-            foreach (scandir($pageDir) as $fileId) {
-                if (is_file($pageDir . $fileId)) {
-                    $sortedByDate[] = array('fname' => $fileId, 'time' => filemtime($pageDir . $fileId));
-                }
-            }         
-
-            usort($sortedByDate, "sorter");
-            self::$postsMeta = $sortedByDate;
-        }
-        return self::$postsMeta;
-    }
-
-    public function getPage(Request $request,Dispatcher $dispatcher) {
-        $this->page = $dispatcher->cfg['pages'][$request->get('page')];
-        $this->url = $request->get('page');
-    }
-
-    public function getArchive(Request $request) {
-        $from = mktime(0, 0, 0, $request->get('month'), 1, $request->get('year'));
-        $to = mktime(0, 0, 0, $request->get('month') + 1, 0, $request->get('year'));
+    public function getList(Request $request, Satellite $satellite) {
         $posts = array();
-        foreach (self::scanPosts() as $post) {
-            if ($post['time'] >= $from && $post['time'] <= $to) {
-                $posts[] = Post::load($post['fname']);
-            }
-        }
-        $this->archiveDate = self::getMonthName($from);
-        $this->posts = $posts;
-    }
 
-    public function getList(Request $request) {
-        $posts = array();
-        $pages = array();
+        $this->curPage = $request->has('page') && $request->get('page') ? $request->get('page') : 1;
 
-        $page = $request->has('page') && $request->get('page') ? $request->get('page') : 1;
+        $postFiles = $satellite->get('posts');
 
-        $postFiles = self::scanPosts();
+        $postsPerPage = 7;
 
-        $postsPerPage = 5;
-
-        $from = ($page - 1) * $postsPerPage;
+        $from = ($this->curPage - 1) * $postsPerPage;
         $to = $from + $postsPerPage;
         $to = $to > sizeof($postFiles) ? sizeof($postFiles) : $to;
         for ($i = $from; $i < $to; $i++) {
-            $posts[] = Post::load($postFiles[$i]['fname']);
+            $posts[] =  self::loadPost($postFiles[$i]['fname'], $satellite);
         }
         $this->posts = $posts;
 
@@ -65,28 +25,41 @@ class PostController {
             $pages[] = $i + 1;
         }
         $this->pages = $pages;
+
     }
 
-    public function getPost(Request $request) {
-        $postId = $request->get('id');
-        if (!file_exists(getDomenPath('pages/') . $postId)) {
-            throw new Exception('post not found');
+
+    public function getArchive(Request $request, Satellite $satellite) {
+        $from = mktime(0, 0, 0, $request->get('month'), 1, $request->get('year'));
+        $to = mktime(0, 0, 0, $request->get('month') + 1, 0, $request->get('year'));
+        $posts = array();
+        foreach ($satellite->get('posts') as $post) {
+            if ($post['time'] >= $from && $post['time'] <= $to) {
+                $posts[] = self::loadPost($post['fname'], $satellite);
+            }
         }
-        $this->post = Post::load($postId);
+        $this->archiveDate = self::getMonthName($from);
+        $this->posts = $posts;
+    }
+
+
+    public function getPost(Request $request, Satellite $satellite) {
+        $this->post = self::loadPost($request->get('id'), $satellite);
     }
 
     /**
      * @static
      * @return Post[]
      */
-    public static function getRecentPosts() {
+    public static function getRecentPosts(Satellite $satellite) {
         $posts = array();
         $max = 5;
-        foreach (self::scanPosts() as $post) {
+
+        foreach ($satellite->get('posts') as $post) {
             if (!$max--) {
                 break;
             }
-            $posts[] = Post::load($post['fname']);
+            $posts[] = self::loadPost($post['fname'], $satellite);
         }
         return $posts;
     }
@@ -95,9 +68,9 @@ class PostController {
      * @static
      * @return String[]
      */
-    public static function getArchiveMonth() {
+    public static function getArchiveMonth(Satellite $satellite) {
         $months = array();
-        foreach (self::scanPosts() as $post) {
+        foreach ($satellite->get('posts') as $post) {
             $k = date("Y/m", $post['time']);
             if (!isset($months[$k])) {
                 $months[$k] = self::getMonthName($post['time']);
@@ -106,11 +79,11 @@ class PostController {
         return $months;
     }
 
-    private static function getMonthName($time) {
-        return str_replace(array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'), array('Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'), date("F Y", $time));
+    protected static function loadPost($id, $satellite) {
+        return $satellite->loadData($satellite->getPath("posts/" . $id), 'Post');
     }
 
-    public function asArray(){
-        return (array)$this;
+    private static function getMonthName($time) {
+        return str_replace(array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'), array('Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'), date("F Y", $time));
     }
 }

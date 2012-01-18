@@ -6,60 +6,68 @@ class Dispatcher {
      * @var Request
      */
     public $request;
-    public $cfg;
+
+    /**
+     * @var Satellite
+     */
+    public $satellite;
+
 
     private function __construct() {
 
     }
 
     /**
-     * @param Array $cfg
+     * @param Satellite $satellite
      * @return Dispatcher
      */
-    public static function create($cfg) {
+    public static function create(Satellite $satellite) {
         $dispatcher = new self;
-        $dispatcher->cfg = $cfg;
+        $dispatcher->satellite = $satellite;
         return $dispatcher;
     }
 
     public function execute(Request $request) {
         $this->request = $request;
 
-        try {
-            $view = $this->makeView($this->executeController($request));
-        } catch (Exception $e) {
-            $view = $e->getMessage();
-        }
-
-        $this->printPage($view);
+        $this->controller = $this->executeController();
+        return $this;
     }
 
     public function makeView($pc) {
-        return View::create($this->request->action, $pc->asArray())->render();
+        return View::create($this->satellite->getTpl($this->request->action),
+            $pc->asArray()
+        )->render();
     }
 
     /**
      * @param $request
      * @return PostController
      */
-    public function executeController($request) {
-        $controller = ucfirst($request->controller . 'Controller');
-        $action = 'get' . ucfirst($request->action);
+    public function executeController() {
+        $controller = ucfirst($this->request->controller . 'Controller');
+        $action = strtolower($this->request->method) . ucfirst($this->request->action);
 
         $pc = new $controller();
-        $pc->$action($request, $this);
+        $pc->$action($this->request, $this->satellite);
         return $pc;
     }
 
-    public function printPage($content) {
+    public function printPage() {
         $this->sendHeaders();
-        $this->sendLayout($content);
+        $this->sendLayout($this->makeView($this->controller));
     }
 
     public function sendLayout($content) {
-        echo View::create('layout', array('content' => $content, 'recentPosts' => PostController::getRecentPosts(),
-                                         'archive' => PostController::getArchiveMonth(), 'pages' => $this->cfg['pages'],
-                                         'title' => $this->cfg['title'], 'about' => $this->cfg['about']))->render();
+        echo View::create($this->satellite->getTpl('layout'),
+            array('content' => $content,
+                'recentPosts' => PostController::getRecentPosts($this->satellite),
+                'archive' => PostController::getArchiveMonth($this->satellite),
+                'pages' => PageController::getPages($this->satellite),
+                'title' => $this->satellite->getCfg('title'),
+                'about' => $this->satellite->getCfg('about')
+            )
+        )->render();
     }
 
     public function sendHeaders() {

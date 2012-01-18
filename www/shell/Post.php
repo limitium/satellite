@@ -1,43 +1,14 @@
 <?php
 
-class Post {
+class Post extends Page {
 
-    private $fileId;
-    public $title;
-    public $body;
     public $published;
     public $comments = array();
-    private static $postLoaded = array();
 
-    /**
-     *
-     * @param String $fileId
-     * @return Post
-     * @throws Exception 
-     */
-    public static function load($fileId) {
-        if (!isset(self::$postLoaded[$fileId])) {
-            $pageDir = getDomenPath('pages/');
-            $commentsDir = getDomenPath('comments/');
-            if (!file_exists($pageDir . $fileId)) {
-                throw new Exception('Post not found '.$fileId);
-            }
-            $postData = include $pageDir . $fileId;
-            $commentData = array();
-            if (file_exists($commentsDir . $fileId)) {
-                $commentData = include $commentsDir . $fileId;
-            }
-            self::$postLoaded[$fileId] = new self($fileId, $postData['title'], $postData['body'], filemtime($pageDir . $fileId), $commentData);
-        }
-        return self::$postLoaded[$fileId];
-    }
-
-    private function __construct($fileId, $title, $body, $published = 0, $commetns = array()) {
-        $this->fileId = $fileId;
-        $this->title = $title;
-        $this->body = $body;
+    public function __construct($filePath, $pageData, $published = 0) {
+        parent::__construct($filePath, $pageData);
         $this->published = $published;
-        $this->comments = $commetns;
+        $this->comments = array();
     }
 
     public function getCommentsCount() {
@@ -77,41 +48,37 @@ class Post {
         return $text;
     }
 
-    public function getId() {
-        return $this->fileId;
-    }
-
     /**
      *
-     * @return Post 
+     * @return Post
      */
     public function getNext() {
         $cur = false;
-        foreach (PostController::scanPosts() as $post) {
-            if ($cur) {
-                return Post::load($post['fname']);
-            }
-            if ($post['fname'] == $this->getId()) {
-                $cur = true;
-            }
-        }
+//        foreach ($this->scanPosts() as $post) {
+//            if ($cur) {
+//                return Post::load($post['fname']);
+//            }
+//            if ($post['fname'] == $this->getId()) {
+//                $cur = true;
+//            }
+//        }
     }
 
     /**
      *
-     * @return Post 
+     * @return Post
      */
     public function getPrev() {
         $prev = null;
-        foreach (PostController::scanPosts() as $post) {
-            if ($post['fname'] == $this->getId()) {
-                if ($prev) {
-                    return Post::load($prev['fname']);
-                }
-                break;
-            }
-            $prev = $post;
-        }
+//        foreach ($this->scanPosts() as $post) {
+//            if ($post['fname'] == $this->getId()) {
+//                if ($prev) {
+//                    return Post::load($prev['fname']);
+//                }
+//                break;
+//            }
+//            $prev = $post;
+//        }
     }
 
 }
