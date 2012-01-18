@@ -31,7 +31,7 @@ class Satellite {
     public function loadData($fileName, $class) {
         if (!isset($this->cache[$fileName])) {
             if (!file_exists($fileName)) {
-                throw new Exception("404 $class($fileName) not found!");
+                throw new Exception("404 $class not found!");
             }
             $data = include $fileName;
             $this->cache[$fileName] = new $class($fileName, $data, filemtime($fileName));

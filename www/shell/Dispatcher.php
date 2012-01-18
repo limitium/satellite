@@ -49,14 +49,31 @@ class Dispatcher {
         $action = strtolower($this->request->method) . ucfirst($this->request->action);
 
         $pc = new $controller();
-        $pc->$action($this->request, $this->satellite);
+        try {
+            if(method_exists($pc,$action)){
+            $pc->$action($this->request, $this->satellite);
+            }else{
+                throw new Exception('Error bro (:');
+            }
+        } catch (Exception $e) {
+            $pc->e = $e;
+        }
         return $pc;
     }
 
     public function printPage() {
         $this->sendHeaders();
-        $response = $this->makeView($this->controller);
-        if ($this->request->isGet()) {
+
+        try {
+            $response = $this->makeView($this->controller);
+        } catch (Exception $e) {
+            $this->controller->e = $e;
+        }
+
+        if (isset($this->controller->e) || $this->request->isGet()) {
+            if (isset($this->controller->e)) {
+                $response = $this->controller->e->getMessage();
+            }
             $this->wrapLayout($response);
         }
         $this->sendResponse($response);
@@ -69,6 +86,8 @@ class Dispatcher {
                 'archive' => PostController::getArchiveMonth($this->satellite),
                 'pages' => PageController::getPages($this->satellite),
                 'title' => $this->satellite->getCfg('title'),
+                'keys' => $this->satellite->getCfg('keys'),
+                'description' => $this->satellite->getCfg('description'),
                 'about' => $this->satellite->getCfg('about')
             )
         )->render();

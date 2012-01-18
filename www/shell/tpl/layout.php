@@ -11,6 +11,8 @@
         <meta property="og:site_name" content="<?php echo $title; ?>" />
         <meta property="og:image" content="" />
 
+        <meta name='Description' content='<?php echo $description ?>' >
+        <meta name='Keywords' content='<?php echo $keys ?>'>
         <meta name="application-name" content="<?php echo $title; ?>" />
         <meta name="msapplication-window" content="width=device-width;height=device-height" />
 

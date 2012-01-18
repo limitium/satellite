@@ -64,7 +64,7 @@ class Request {
                     $this->action = 'post';
                 }
                 if ($urlParts[0] == 'page') {
-                    $params['page'] = $urlParts[1];
+                    $params['page'] = (int)$urlParts[1];
                 }
                 break;
             /**
