@@ -37,4 +37,8 @@ class FileManager {
     public function getPath($path = "") {
         return self::getRoot() . str_replace("/", DIRECTORY_SEPARATOR, $path);
     }
+
+    public function saveFile($name, $content) {
+        file_put_contents($name,$content);
+    }
 }

@@ -35,7 +35,7 @@ class Dispatcher {
     }
 
     public function makeView($pc) {
-        return View::create($this->satellite->getTpl($this->request->action),
+        return View::create($this->satellite->getTpl($this->request->isGet() ? $this->request->action : 'post' . ucfirst($this->request->action)),
             $pc->asArray()
         )->render();
     }
@@ -55,11 +55,15 @@ class Dispatcher {
 
     public function printPage() {
         $this->sendHeaders();
-        $this->sendLayout($this->makeView($this->controller));
+        $response = $this->makeView($this->controller);
+        if ($this->request->isGet()) {
+            $this->wrapLayout($response);
+        }
+        $this->sendResponse($response);
     }
 
-    public function sendLayout($content) {
-        echo View::create($this->satellite->getTpl('layout'),
+    public function wrapLayout(&$content) {
+        $content = View::create($this->satellite->getTpl('layout'),
             array('content' => $content,
                 'recentPosts' => PostController::getRecentPosts($this->satellite),
                 'archive' => PostController::getArchiveMonth($this->satellite),
@@ -72,6 +76,10 @@ class Dispatcher {
 
     public function sendHeaders() {
         header("Content-Type: text/html; charset=UTF-8");
+    }
+
+    public function sendResponse($response) {
+        echo $response;
     }
 
 }

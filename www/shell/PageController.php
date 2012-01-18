@@ -7,8 +7,17 @@ class PageController {
         return (array)$this;
     }
 
+    public function postPage(Request $request, Satellite $satellite) {
+        $path = $satellite->getPath("pages/" . $request->get('id'));
+        $this->page = new Page($path, $request->params);
+        if ($satellite->getCfg('key') != $request->get('key')) {
+            throw new Exception('Invalid key!');
+        }
+        $satellite->save($this->page);
+    }
+
     public function getPage(Request $request, Satellite $satellite) {
-        $this->page= self::loadPage($request->get('id'), $satellite);
+        $this->page = self::loadPage($request->get('id'), $satellite);
     }
 
     public static function getPages(Satellite $satellite) {

@@ -39,26 +39,32 @@ class Request {
         switch (sizeof($urlParts)) {
             /**
              * get satellite/:id
+             * post satellite/(post|page)
              */
             case 1:
-                $params['id'] = $urlParts[0];
-                $this->controller = 'page';
-                $this->action = 'page';
+                if ($this->isGet()) {
+                    $params['id'] = $urlParts[0];
+                    $this->controller = 'page';
+                    $this->action = 'page';
+                } else {
+                    if ($urlParts[0] == 'page') {
+                        $this->controller = 'page';
+                        $this->action = 'page';
+                        $params = $_POST;
+                    }
+                }
                 break;
             /**
              * get satellite/post/:id
              * get satellite/page/:page
-             * post satellite/(post|page)
              */
             case 2:
-                if ($this->isGet()) {
-                    if ($urlParts[0] == 'post') {
-                        $params['id'] = $urlParts[1];
-                        $this->action = 'post';
-                    }
-                    if ($urlParts[0] == 'page') {
-                        $params['page'] = $urlParts[1];
-                    }
+                if ($urlParts[0] == 'post') {
+                    $params['id'] = $urlParts[1];
+                    $this->action = 'post';
+                }
+                if ($urlParts[0] == 'page') {
+                    $params['page'] = $urlParts[1];
                 }
                 break;
             /**

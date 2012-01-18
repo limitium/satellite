@@ -39,6 +39,10 @@ class Satellite {
         return $this->cache[$fileName];
     }
 
+    public function save(Page $page) {
+        $this->fm->saveFile($page->getFilePath(), "<?php return " . var_export($page->asArray(), 1).";");
+    }
+
     public function getTpl($tpl) {
         $viewFile = $this->getPath("tpl/{$tpl}.php");
         if (!file_exists($viewFile)) {
