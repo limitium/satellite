@@ -4,6 +4,8 @@ class Post extends Page {
 
     public $published;
     public $comments = array();
+    public $prev = null;
+    public $next = null;
 
     public function __construct($filePath, $pageData, $published = 0) {
         parent::__construct($filePath, $pageData);

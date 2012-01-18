@@ -1,8 +1,8 @@
 <div class="hfeed" id="primarycontent">
     <hr />
     <div class="navigation">
-        <?php $prev = $post->getPrev(); ?>
-        <?php $next = $post->getNext(); ?>
+        <?php $prev = $post->prev; ?>
+        <?php $next = $post->next; ?>
         <?php if ($prev): ?>
             <div class="left"><span>«</span> <a href="/post/<?php echo $prev->getId(); ?>"><?php echo $prev->title; ?></a></div>		
         <?php endif; ?>

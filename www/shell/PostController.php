@@ -4,7 +4,7 @@ class PostController extends PageController {
 
     public function postPost(Request $request, Satellite $satellite) {
         $path = $satellite->getPath("posts/" . $request->get('id'));
-        $this->post= new Post($path, $request->params);
+        $this->post = new Post($path, $request->params);
         if ($satellite->getCfg('key') != $request->get('key')) {
             throw new Exception('Invalid key!');
         }
@@ -24,7 +24,7 @@ class PostController extends PageController {
         $to = $from + $postsPerPage;
         $to = $to > sizeof($postFiles) ? sizeof($postFiles) : $to;
         for ($i = $from; $i < $to; $i++) {
-            $posts[] =  self::loadPost($postFiles[$i]['fname'], $satellite);
+            $posts[] = self::loadPost($postFiles[$i]['fname'], $satellite);
         }
         $this->posts = $posts;
 
@@ -52,7 +52,28 @@ class PostController extends PageController {
 
 
     public function getPost(Request $request, Satellite $satellite) {
+        $prev = null;
+        $next = null;
+        $cur = false;
+        foreach ($satellite->get('posts') as $post) {
+            if ($cur) {
+                $next = $post['fname'];
+                break;
+            }
+            if ($request->get('id') == $post['fname']) {
+                $cur = true;
+            } else {
+                $prev = $post['fname'];
+            }
+        }
         $this->post = self::loadPost($request->get('id'), $satellite);
+
+        if ($prev) {
+            $this->post->prev = self::loadPost($prev, $satellite);
+        }
+        if ($next) {
+            $this->post->next = self::loadPost($next, $satellite);
+        }
     }
 
     /**
