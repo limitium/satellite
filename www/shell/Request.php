@@ -16,7 +16,7 @@ class Request {
         $this->method = $_SERVER['REQUEST_METHOD'];
 
         $urlParts = array();
-        foreach (explode('/', $_SERVER['REQUEST_URI']) as $p) {
+        foreach (explode('/', strtolower($_SERVER['REQUEST_URI'])) as $p) {
             $p = trim($p);
             if ($p) {
                 $urlParts[] = $p;
@@ -47,9 +47,9 @@ class Request {
                     $this->controller = 'page';
                     $this->action = 'page';
                 } else {
-                    if ($urlParts[0] == 'page') {
-                        $this->controller = 'page';
-                        $this->action = 'page';
+                    if ($urlParts[0] == 'page' || $urlParts[0] == 'post') {
+                        $this->controller = $urlParts[0];
+                        $this->action = $urlParts[0];
                         $params = $_POST;
                     }
                 }

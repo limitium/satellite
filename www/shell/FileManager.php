@@ -23,11 +23,11 @@ class FileManager {
     }
 
     private static function byDate($a, $b) {
-        $a['time'] < $b['time'] ? 1 : -1;
+        return $a['time'] < $b['time'] ? 1 : -1;
     }
 
     private static function byName($a, $b) {
-        $a['fname'] < $b['fname'] ? 1 : -1;
+        return $a['fname'] < $b['fname'] ? 1 : -1;
     }
 
     public static function getRoot() {

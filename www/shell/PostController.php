@@ -2,6 +2,14 @@
 
 class PostController extends PageController {
 
+    public function postPost(Request $request, Satellite $satellite) {
+        $path = $satellite->getPath("posts/" . $request->get('id'));
+        $this->post= new Post($path, $request->params);
+        if ($satellite->getCfg('key') != $request->get('key')) {
+            throw new Exception('Invalid key!');
+        }
+        $satellite->save($this->post);
+    }
 
     public function getList(Request $request, Satellite $satellite) {
         $posts = array();
