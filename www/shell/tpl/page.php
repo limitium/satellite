@@ -2,7 +2,7 @@
     <div class="page type-page status-publish hentry" id="post-<?php echo $url; ?>">
 
         <div class="page-head">
-            <h2><a title="Постоянная ссылка на <?php echo $page->title; ?>" rel="bookmark" href="/<?php echo $url; ?>"><?php echo $page->title; ?></a></h2>
+            <h2><?php echo $page->title; ?></h2>
         </div>
 
         <div class="entry-content">

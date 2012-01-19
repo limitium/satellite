@@ -45,7 +45,7 @@ margin-top: 10px;
 margin-bottom: 10px;
 float: right;
 text-align: right;
-background: transparent url(/data/prosbaniochem/images/img_04.jpg) right top no-repeat;
+background: transparent url(/images/img_04.jpg) right top no-repeat;
 padding-right: 6px;
 }
 .menu2 {
@@ -53,7 +53,7 @@ padding-left: 6px;
 height: 24px;
 float: right;
 text-align: right;
-background: #9B6B3A url(/data/prosbaniochem/images/img_03.jpg) left top no-repeat;
+background: #9B6B3A url(/images/img_03.jpg) left top no-repeat;
 }
 
 .menu1 li{
@@ -87,7 +87,7 @@ background-color: #CC8035;
 margin-top: 10px;
 float: left;
 width: 524px;
-background: url(/data/prosbaniochem/images/img_10.jpg) center repeat-y;
+background: url(/images/img_10.jpg) center repeat-y;
 }
 .contenttext {
 padding-left: 17px;
@@ -102,7 +102,7 @@ margin-top: 10px;
 
 .postdate {
 padding-bottom: 10px;
-background: transparent url(/data/prosbaniochem/images/img_16.jpg) left top no-repeat;
+background: transparent url(/images/img_16.jpg) left top no-repeat;
 height: 37px;
 width: 39px;
 text-align: left;
@@ -143,7 +143,7 @@ float: left;
 
 .postauthor {
 height: 26px;
-background: transparent url(/data/prosbaniochem/images/img_19.jpg) left center no-repeat;
+background: transparent url(/images/img_19.jpg) left center no-repeat;
 padding-left: 15px;
 padding-top: 4px;
 margin-right: 20px;
@@ -158,7 +158,7 @@ height: 26px;
 float: left;
 padding-left: 15px;
 padding-top: 4px;
-background: transparent url(/data/prosbaniochem/images/img_21.jpg) left center no-repeat;
+background: transparent url(/images/img_21.jpg) left center no-repeat;
 font-family: Verdana, Arial, Helvetica, sans-serif;
 color: #979795;
 font-size: 10px;
@@ -189,7 +189,7 @@ margin: 0px 5px 5px 0px;
 }
 
 .posttext blockquote {
-padding: 5px 5px 5px 40px; background: #F1FAFF url(/data/prosbaniochem/images/img_28.jpg) top left no-repeat; margin: 5px 0px; color:#1F89C7; border: dashed 1px #D8ECF7;}
+padding: 5px 5px 5px 40px; background: #F1FAFF url(/images/img_28.jpg) top left no-repeat; margin: 5px 0px; color:#1F89C7; border: dashed 1px #D8ECF7;}
 .posttext blockquote p { font-size: 11px; padding: 5px 0px; margin: 5px 0px; line-height: 15px; }
 
 		/* POST FOOTER */
@@ -199,7 +199,7 @@ margin-bottom: 30px;
 font-family: Verdana, Arial, Helvetica, sans-serif;
 font-size: 11px;
 height: 32px;
-background: #FCF2C1 url(/data/prosbaniochem/images/img_30.jpg) left top no-repeat;
+background: #FCF2C1 url(/images/img_30.jpg) left top no-repeat;
 display: table;
 #position: relative;
 width: 490px;
@@ -208,13 +208,13 @@ height: 32px;
 }
 
 .postfooter2 {
-background: url(/data/prosbaniochem/images/img_31.jpg) right top no-repeat;
+background: url(/images/img_31.jpg) right top no-repeat;
 }
 
 .postcomments {
 margin-top: 9px;
 margin-left: 6px;
-background: transparent url(/data/prosbaniochem/images/img_36.jpg) left center no-repeat;
+background: transparent url(/images/img_36.jpg) left center no-repeat;
 height: 20px;
 padding-left: 18px;
 color: #6A330C;
@@ -223,7 +223,7 @@ float: left;
 
 .posttags {
 margin-left: 20px;
-background: url(/data/prosbaniochem/images/img_42.jpg) left center no-repeat;
+background: url(/images/img_42.jpg) left center no-repeat;
 height: 20px;
 padding-left: 18px;
 color: #9B9796;
@@ -248,7 +248,7 @@ text-decoration: underline;
 .postnr {
 width: 50px;
 height: 31px;
-background: #F7E382 url(/data/prosbaniochem/images/img_33.jpg) right top no-repeat;
+background: #F7E382 url(/images/img_33.jpg) right top no-repeat;
 float: right;
 text-align: center;
 padding-top: 1px;
@@ -259,7 +259,7 @@ padding-left: 10px;
 padding-top: 4px;
 margin-left: 7px;
 margin-top: 4px;
-background: transparent url(/data/prosbaniochem/images/img_39.jpg) left center no-repeat;
+background: transparent url(/images/img_39.jpg) left center no-repeat;
 height: 20px;
 color: #6A330C;
 }
@@ -294,20 +294,20 @@ color: #9A6A3A;
 
 .box1 {
 width: 223px;
-background: #FAEFB9 url(/data/prosbaniochem/images/img_13.jpg) center top no-repeat;
+background: #FAEFB9 url(/images/img_13.jpg) center top no-repeat;
 margin-bottom: 15px;
 }
 
 .box2 {
 width: 223px;
-background: #F7B9BA url(/data/prosbaniochem/images/img_29.jpg) center top no-repeat;
+background: #F7B9BA url(/images/img_29.jpg) center top no-repeat;
 margin-bottom: 15px;
 }
 
 
 .box3 {
 width: 223px;
-background: #F8D7B6 url(/data/prosbaniochem/images/img_52.jpg) center top no-repeat;
+background: #F8D7B6 url(/images/img_52.jpg) center top no-repeat;
 margin-bottom: 15px;
 }
 
@@ -317,15 +317,15 @@ padding: 12px;
 }
 .box1text {
 padding-bottom: 20px;
-background: url(/data/prosbaniochem/images/img_27.jpg) bottom no-repeat;
+background: url(/images/img_27.jpg) bottom no-repeat;
 }
 .box2text {
 padding-bottom: 20px;
-background: url(/data/prosbaniochem/images/img_50.jpg) bottom no-repeat;
+background: url(/images/img_50.jpg) bottom no-repeat;
 }
 .box3text {
 padding-bottom: 20px;
-background: url(/data/prosbaniochem/images/img_54.jpg) bottom no-repeat;
+background: url(/images/img_54.jpg) bottom no-repeat;
 }
 
 
@@ -375,7 +375,7 @@ padding-top: 5px;
 
 .footer {
 margin-top: 10px;
-background: #f7e382 url(/data/prosbaniochem/images/footer-left.jpg) left top no-repeat;ht
+background: #f7e382 url(/images/footer-left.jpg) left top no-repeat;ht
 }
 .footertext {
 color: #9D6B3A;
@@ -384,7 +384,7 @@ text-align: left;
 padding-left: 15px;
 font-size:11px;
 font-family: Verdana, Arial, Helvetica, sans-serif;
-background: url(/data/prosbaniochem/images/footer-right.jpg) right top no-repeat;
+background: url(/images/footer-right.jpg) right top no-repeat;
 }
 
 .footer a{
@@ -397,7 +397,7 @@ margin: 9px 10px 0 0;
 display: block;
 width: 84px;
 height: 20px;
-background: url(/data/prosbaniochem/images/designed-by.jpg) top center no-repeat;
+background: url(/images/designed-by.jpg) top center no-repeat;
 text-decoration: none;
 float: right;
 }
@@ -447,7 +447,7 @@ ol.commentlist {
 	}
 
 .time {
-	background: url(/data/prosbaniochem/images/time.png) no-repeat 1px;
+	background: url(/images/time.png) no-repeat 1px;
 	padding-left:20px;
 	color: #FFFFFF;
 	}
@@ -532,11 +532,11 @@ font-size: 13px;
 color: #95513A;
 font-weight:bold;
 padding-top: 3px;
-background: url(/data/prosbaniochem/images/nav-bg.jpg) top center no-repeat;
+background: url(/images/nav-bg.jpg) top center no-repeat;
 }
 
 .navigation a:hover {
-background: url(/data/prosbaniochem/images/nav-bg-hover.jpg) top center no-repeat;
+background: url(/images/nav-bg-hover.jpg) top center no-repeat;
 }
 
 
@@ -573,7 +573,7 @@ padding-bottom: 10px;
 }
 
 .sidebar #s {
-background: #f7e382 url(/data/prosbaniochem/images/search-bg.jpg) left top no-repeat;
+background: #f7e382 url(/images/search-bg.jpg) left top no-repeat;
 height: 22px;
 margin-top: 0px;
 vertical-align: top;

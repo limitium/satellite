@@ -6,7 +6,7 @@
 
     <title><?php echo $title; ?></title>
 
-    <link rel="stylesheet" href="/data/prosbaniochem/css/style.css" type="text/css"
+    <link rel="stylesheet" href="/css/style.css" type="text/css"
           media="screen"/>
 
     <meta name="generator" content="WordPress 3.2.1"/>
