@@ -19,13 +19,13 @@
         <link rel="shortcut icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48" />
         <link rel="icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48" />
 
-        <link rel="stylesheet" type="text/css" media="screen" href="/css/style_002.css" />
-        <link rel="stylesheet" type="text/css" media="print" href="/css/print.css" />        
-        <link rel="stylesheet" href="/css/global.css" type="text/css" />
-        <link rel="stylesheet" id="loggedout-subscribe-css" href="/css/widget.css" type="text/css" media="all" />
-        <link rel="stylesheet" id="post-reactions-css" href="/css/style.css" type="text/css" media="all" />
-        <link rel="stylesheet" type="text/css" id="gravatar-card-css" href="/css/hovercard.css" />
-        <link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="/css/services.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="/css/style_002123.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="/css/print123.css" />
+        <link rel="stylesheet" href="/css/global123.css" type="text/css" />
+        <link rel="stylesheet" id="loggedout-subscribe-css" href="/css/widget123.css" type="text/css" media="all" />
+        <link rel="stylesheet" id="post-reactions-css" href="/css/style123.css" type="text/css" media="all" />
+        <link rel="stylesheet" type="text/css" id="gravatar-card-css" href="/css/hovercard123.css" />
+        <link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="/css/services123.css" />
         <style type="text/css">.recentcomments a{display:inline !important;padding: 0 !important;margin: 0 !important;}</style>
         <style type="text/css">
             table.recentcommentsavatar img.avatar {border: 0px; margin:0;}

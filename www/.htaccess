@@ -1,13 +1,16 @@
-Options +FollowSymLinks +ExecCGI
+Options +FollowSymLinks +ExecCGI -Indexes
 
 <IfModule mod_rewrite.c>
-  RewriteEngine On
-
-  RewriteCond %{HTTP_HOST} ^(.+)?\.?(.+)?$ [NC]
-  RewriteCond %{DOCUMENT_ROOT}/data/%1%2/%{REQUEST_URI} -f [NC]
-  RewriteRule .? /data/%1%2/%{REQUEST_URI} [L]
+    RewriteEngine On
 
 
-  RewriteCond %{REQUEST_FILENAME} !-f [NC]
-  RewriteRule ^(.*)$ index.php [QSA,L]
+    RewriteCond %{HTTP_HOST} ^(.+?)\.?(.+?)$ [NC]
+    RewriteCond %{DOCUMENT_ROOT}/data/%1%2/%{REQUEST_URI} -f [NC]
+    RewriteRule .? /data/%1%2/%{REQUEST_URI} [L]
+
+
+    RewriteCond %{REQUEST_FILENAME} !-f [NC]
+    RewriteRule ^(.*)$ index.php [QSA,L]
+
+
 </IfModule>
