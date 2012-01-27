@@ -4,7 +4,7 @@ Options +FollowSymLinks +ExecCGI -Indexes
     RewriteEngine On
 
 
-    RewriteCond %{HTTP_HOST} ^(.+?)\.?(.+?)$ [NC]
+    RewriteCond %{HTTP_HOST} ^(.+)?\.(.+)?$ [NC]
     RewriteCond %{DOCUMENT_ROOT}/data/%1%2/%{REQUEST_URI} -f [NC]
     RewriteRule .? /data/%1%2/%{REQUEST_URI} [L]
 
